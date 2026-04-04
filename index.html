@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CITAWIN - All-in-One Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;600;700&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -91,9 +91,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* =========================================
-           TOOL 1: JACKPOT GENERATOR STYLES
-           ========================================= */
+        /* TOOL 1: JACKPOT */
         #tool-jackpot { padding: 100px 20px 20px 20px; }
         #tool-jackpot .container {
             max-width: 800px; width: 100%; background: rgba(10, 15, 25, 0.92);
@@ -103,41 +101,30 @@
         #tool-jackpot h1 { font-size: 2.5rem; font-weight: 800; text-align: center; background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; font-family: 'Poppins', sans-serif; }
         #tool-jackpot h1 i { background: #FFD700; color: #0a0f1a; padding: 15px; border-radius: 50%; font-size: 2rem; box-shadow: 0 0 30px #FFD700; }
         #tool-jackpot .subtitle { text-align: center; color: #e0e0e0; margin-bottom: 30px; font-size: 1.2rem; border-bottom: 2px dashed #FFD700; padding-bottom: 15px; }
-        #tool-jackpot .input-group { margin-bottom: 25px; position: relative; }
-        #tool-jackpot .input-group label { display: block; color: #FFD700; font-weight: 600; margin-bottom: 8px; font-size: 1rem; letter-spacing: 0.5px; }
-        #tool-jackpot .input-group input, #tool-jackpot .input-group textarea { width: 100%; padding: 15px 25px; background: rgba(255, 255, 255, 0.08); border: 2px solid #FFD700; border-radius: 60px; color: white; font-size: 1rem; transition: all 0.3s; outline: none; font-family: 'Poppins', sans-serif; }
-        #tool-jackpot .input-group textarea { border-radius: 25px; resize: vertical; min-height: 90px; }
-        #tool-jackpot .file-upload-label { display: flex; align-items: center; gap: 12px; padding: 18px 30px; background: rgba(255, 215, 0, 0.15); border: 2px dashed #FFD700; border-radius: 60px; color: #FFD700; cursor: pointer; transition: all 0.3s; font-weight: 500; font-size: 1.1rem; }
+        #tool-jackpot .input-group { margin-bottom: 25px; }
+        #tool-jackpot .input-group label { display: block; color: #FFD700; font-weight: 600; margin-bottom: 8px; font-size: 1rem; }
+        #tool-jackpot .input-group input { width: 100%; padding: 15px 25px; background: rgba(255,255,255,0.08); border: 2px solid #FFD700; border-radius: 60px; color: white; font-size: 1rem; transition: all 0.3s; outline: none; font-family: 'Poppins', sans-serif; }
+        #tool-jackpot .file-upload-label { display: flex; align-items: center; gap: 12px; padding: 18px 30px; background: rgba(255,215,0,0.15); border: 2px dashed #FFD700; border-radius: 60px; color: #FFD700; cursor: pointer; transition: all 0.3s; font-weight: 500; font-size: 1.1rem; }
         #tool-jackpot #gambar { display: none; }
         #tool-jackpot .button-group { display: flex; gap: 15px; margin: 35px 0 25px; flex-wrap: wrap; }
         #tool-jackpot .btn { flex: 1; padding: 16px 25px; border: none; border-radius: 60px; font-weight: 800; font-size: 1.2rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        #tool-jackpot .btn-primary { background: linear-gradient(135deg, #FFD700, #FFA500); color: #0a0f1a; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5); }
+        #tool-jackpot .btn-primary { background: linear-gradient(135deg, #FFD700, #FFA500); color: #0a0f1a; box-shadow: 0 5px 20px rgba(255,215,0,0.5); }
         #tool-jackpot .btn-secondary { background: transparent; border: 2px solid #FFD700; color: #FFD700; }
-        #tool-jackpot .result-container { background: rgba(0, 0, 0, 0.6); border: 2px solid #FFD700; border-radius: 30px; padding: 30px; margin-top: 30px; backdrop-filter: blur(5px); }
-        #tool-jackpot .result-title { color: #FFD700; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-size: 1.3rem; border-bottom: 1px solid #FFD700; padding-bottom: 10px; }
-        #tool-jackpot #hasil { color: white; line-height: 1.6; font-size: 1.1rem; white-space: pre-line; background: rgba(0, 0, 0, 0.4); padding: 25px; border-radius: 20px; border-left: 6px solid #FFD700; margin-bottom: 25px; }
-        #tool-jackpot .preview-image { max-width: 100%; width: 100%; max-height: 450px; object-fit: contain; border-radius: 20px; border: 4px solid #FFD700; box-shadow: 0 0 40px rgba(255, 215, 0, 0.5); display: none; margin: 20px auto 0; background: #000; }
+        #tool-jackpot .result-container { background: rgba(0,0,0,0.6); border: 2px solid #FFD700; border-radius: 30px; padding: 30px; margin-top: 30px; backdrop-filter: blur(5px); }
+        #tool-jackpot #jp_hasil { color: white; line-height: 1.6; font-size: 1.1rem; white-space: pre-line; background: rgba(0,0,0,0.4); padding: 25px; border-radius: 20px; border-left: 6px solid #FFD700; margin-bottom: 25px; }
+        #tool-jackpot .preview-image { max-width: 100%; width: 100%; max-height: 450px; object-fit: contain; border-radius: 20px; border: 4px solid #FFD700; box-shadow: 0 0 40px rgba(255,215,0,0.5); display: none; margin: 20px auto 0; background: #000; }
         #tool-jackpot .preview-image.show { display: block; }
-        #tool-jackpot .placeholder-image { text-align: center; padding: 60px 20px; background: rgba(0, 0, 0, 0.5); border: 2px dashed #FFD700; border-radius: 20px; color: #FFD700; font-style: italic; margin-top: 20px; font-size: 1.2rem; }
+        #tool-jackpot .placeholder-image { text-align: center; padding: 60px 20px; background: rgba(0,0,0,0.5); border: 2px dashed #FFD700; border-radius: 20px; color: #FFD700; font-style: italic; margin-top: 20px; font-size: 1.2rem; }
         #tool-jackpot .placeholder-image i { font-size: 4rem; margin-bottom: 15px; display: block; }
         #tool-jackpot .footer-note { text-align: center; color: #aaa; font-size: 1rem; margin-top: 25px; }
 
-        /* =========================================
-           TOOL 2: QRIS CALCULATOR STYLES
-           ========================================= */
+        /* TOOL 2: QRIS */
         #tool-qris .overlay {
-            position: relative;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 60px 40px 40px 40px;
-            border-radius: 15px;
-            width: 700px;
-            max-width: 95%;
-            text-align: center;
-            box-shadow: 0 0 25px rgba(0,0,0,0.6);
-            margin: 80px auto 20px auto;
+            position: relative; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+            padding: 60px 40px 40px 40px; border-radius: 15px; width: 700px; max-width: 95%;
+            text-align: center; box-shadow: 0 0 25px rgba(0,0,0,0.6); margin: 80px auto 20px auto;
         }
-        #tool-qris h1 { font-size: 32px; margin-bottom: 10px; color: #facc15; letter-spacing: 1px; }
+        #tool-qris h1 { font-size: 32px; margin-bottom: 10px; color: #facc15; }
         #tool-qris h3.qris { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); font-size: 36px; color: #22c55e; font-weight: bold; text-shadow: 0 0 10px #22c55e; }
         #tool-qris p { color: #ddd; margin-bottom: 20px; }
         #tool-qris textarea { width: 100%; height: 200px; border: none; border-radius: 10px; padding: 15px; font-size: 14px; resize: none; outline: none; background: #111; color: white; box-shadow: inset 0 0 10px rgba(0,0,0,0.8); }
@@ -150,176 +137,180 @@
         #tool-qris .money { position: absolute; width: 30px; height: 15px; background: linear-gradient(90deg, #facc15, #22c55e); color: #fff; font-size: 12px; font-weight: bold; text-align: center; border-radius: 4px; opacity: 0.8; animation-name: fall; animation-timing-function: linear; animation-iteration-count: infinite; z-index: 2; }
         @keyframes fall { 0% {transform: translateY(-50px) rotate(0deg); opacity:1;} 100% {transform: translateY(100vh) rotate(360deg); opacity:0;} }
 
-        /* =========================================
-           TOOL 3: PREDIKSI BOLA STYLES
-           ========================================= */
+        /* TOOL 3: PREDIKSI */
         #tool-prediksi { font-family: 'Rajdhani', sans-serif; color: #ffffff; }
         #tool-prediksi .container { max-width: 1800px; margin: 0 auto; padding: 90px 20px 20px 20px; }
-        #tool-prediksi .header { text-align: center; padding: 30px 20px; margin-bottom: 30px; background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(21, 21, 32, 0.9)); backdrop-filter: blur(10px); border-radius: 20px; border: 3px solid #f5c542; box-shadow: 0 0 40px rgba(255, 215, 0, 0.4); }
-        #tool-prediksi .header img.logo { max-width: 300px; filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8)); }
-        #tool-prediksi .header h1 { font-family: 'Orbitron', sans-serif; font-size: 42px; font-weight: 900; color: #f5c542; margin: 15px 0 10px; text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); letter-spacing: 3px; }
-        #tool-prediksi .section { background: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(21, 21, 32, 0.9)); backdrop-filter: blur(10px); border: 2px solid rgba(255, 215, 0, 0.5); border-radius: 15px; padding: 25px; margin-bottom: 25px; box-shadow: 0 0 25px rgba(255, 215, 0, 0.2); }
+        #tool-prediksi .header { text-align: center; padding: 30px 20px; margin-bottom: 30px; background: linear-gradient(135deg, rgba(26,26,46,0.85), rgba(21,21,32,0.9)); backdrop-filter: blur(10px); border-radius: 20px; border: 3px solid #f5c542; box-shadow: 0 0 40px rgba(255,215,0,0.4); }
+        #tool-prediksi .header img.logo { max-width: 300px; filter: drop-shadow(0 0 25px rgba(255,215,0,0.8)); }
+        #tool-prediksi .header h1 { font-family: 'Orbitron', sans-serif; font-size: 42px; font-weight: 900; color: #f5c542; margin: 15px 0 10px; text-shadow: 0 0 20px rgba(255,215,0,0.8); letter-spacing: 3px; }
+        #tool-prediksi .section { background: linear-gradient(135deg, rgba(26,26,46,0.85), rgba(21,21,32,0.9)); backdrop-filter: blur(10px); border: 2px solid rgba(255,215,0,0.5); border-radius: 15px; padding: 25px; margin-bottom: 25px; box-shadow: 0 0 25px rgba(255,215,0,0.2); }
         #tool-prediksi .section h2 { font-family: 'Orbitron', sans-serif; color: #f5c542; font-size: 20px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; }
-        #tool-prediksi textarea { width: 100%; min-height: 350px; padding: 20px; background: rgba(10, 10, 15, 0.9); border: 2px solid rgba(255, 215, 0, 0.4); border-radius: 12px; color: #ffffff; font-family: 'Courier New', monospace; font-size: 14px; resize: vertical; }
+        #tool-prediksi textarea { width: 100%; min-height: 350px; padding: 20px; background: rgba(10,10,15,0.9); border: 2px solid rgba(255,215,0,0.4); border-radius: 12px; color: #ffffff; font-family: 'Courier New', monospace; font-size: 14px; resize: vertical; }
         #tool-prediksi .button-group { display: flex; gap: 15px; margin-top: 20px; }
         #tool-prediksi button { flex: 1; padding: 15px 25px; border: none; border-radius: 12px; font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px; }
         #tool-prediksi .btn-copy { background: linear-gradient(135deg, #f5c542, #d4af37); color: #000; border: 2px solid #f5c542; }
-        #tool-prediksi .btn-clear { background: rgba(255, 255, 255, 0.1); color: #ffffff; border: 2px solid rgba(255, 255, 255, 0.3); }
-        #tool-prediksi .output-code { background: rgba(10, 10, 15, 0.9); border: 2px solid rgba(255, 215, 0, 0.4); border-radius: 12px; padding: 20px; min-height: 350px; max-height: 500px; overflow-y: auto; font-family: 'Courier New', monospace; font-size: 11px; white-space: pre-wrap; word-wrap: break-word; color: #00ff88; }
-        #tool-prediksi .preview-table { width: 100%; border-collapse: collapse; background: #000; font-size: 14px; border-radius: 10px; overflow: hidden; margin-top: 15px; }
-        #tool-prediksi .preview-table .league { background: linear-gradient(135deg, #FDB931, #f5c542, #FFA500); color: #1a1a1a; font-weight: 900; text-align: center; padding: 15px; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; }
-        #tool-prediksi .preview-table th { background: #f5c542; color: #1a1a1a; padding: 12px; text-align: center; font-weight: 900; font-size: 14px; text-transform: uppercase; }
-        #tool-prediksi .preview-table td { padding: 12px; text-align: center; font-size: 14px; color: #ffffff; font-weight: 700; border-bottom: 1px solid #333; }
-        #tool-prediksi .preview-table tr:nth-child(even) { background: linear-gradient(180deg, #3a3a3a, #2d2d2d); }
-        #tool-prediksi .preview-table tr:nth-child(odd) { background: linear-gradient(180deg, #2d2d2d, #3a3a3a); }
+        #tool-prediksi .btn-clear { background: rgba(255,255,255,0.1); color: #ffffff; border: 2px solid rgba(255,255,255,0.3); }
+        #tool-prediksi .output-code { background: rgba(10,10,15,0.9); border: 2px solid rgba(255,215,0,0.4); border-radius: 12px; padding: 20px; min-height: 350px; max-height: 500px; overflow-y: auto; font-family: 'Courier New', monospace; font-size: 11px; white-space: pre-wrap; word-wrap: break-word; color: #00ff88; }
         #tool-prediksi .main-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; align-items: start; }
         @media (max-width: 1200px) { #tool-prediksi .main-layout { grid-template-columns: 1fr; } }
 
-        /* =========================================
-           TOOL 4: SYAIR SHIO STYLES (CLEAN - NO LOGO, NO BUTTON)
-           ========================================= */
+        /* ==============================================
+           TOOL 4: SYAIR SHIO — PASARAN SATU-SATU
+           ============================================== */
         #tool-syair {
             font-family: 'Poppins', sans-serif;
-            margin: 0;
             padding: 15px;
             min-height: 100vh;
-            position: relative;
+            --gold: #f5c542;
+            --glow: #ffd86b;
         }
-        #tool-syair::before { display: none; }
-        #tool-syair {
-            --elegant-gold: #f5c542;
-            --gold-glow: #ffd86b;
-            --deep-black: #000;
-            --dark-gray: #111;
-        }
+
         #tool-syair .control-panel {
-            background: rgba(0, 0, 0, 0.92); border: 2px solid var(--elegant-gold); border-radius: 15px;
-            padding: 20px; margin-bottom: 20px; width: 100%; max-width: 800px;
-            box-sizing: border-box; display: flex; flex-direction: column; gap: 15px;
-            box-shadow: 0 0 20px rgba(245, 197, 66, 0.3);
-            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.92); border: 2px solid var(--gold); border-radius: 15px;
+            padding: 18px 20px; margin-bottom: 18px; width: 100%; max-width: 780px;
+            box-sizing: border-box; display: flex; flex-direction: column; gap: 12px;
+            box-shadow: 0 0 20px rgba(245,197,66,0.3); backdrop-filter: blur(10px);
         }
-        #tool-syair .control-panel h3 { margin: 0; color: var(--elegant-gold); text-align: center; font-size: 18px; letter-spacing: 1px; }
-        #tool-syair .input-group { display: flex; gap: 10px; flex-wrap: wrap; }
-        #tool-syair .input-field { flex: 1; min-width: 200px; padding: 10px; border-radius: 8px; border: 1px solid var(--elegant-gold); background: #111; color: #fff; font-family: 'Poppins', sans-serif; }
-        #tool-syair .btn-update { padding: 10px 25px; background: linear-gradient(145deg, #f5c542, #e6b800); border: none; border-radius: 8px; color: #000; font-weight: bold; cursor: pointer; transition: transform 0.2s; font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
-        #tool-syair .btn-update:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--gold-glow); }
+        #tool-syair .control-panel h3 { margin: 0; color: var(--gold); text-align: center; font-size: 16px; letter-spacing: 1px; }
+        #tool-syair .cp-inputs { display: flex; gap: 10px; flex-wrap: wrap; }
+        #tool-syair .input-field { flex: 1; min-width: 180px; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--gold); background: #111; color: #fff; font-family: 'Poppins', sans-serif; font-size: 13px; }
+        #tool-syair .btn-update { padding: 10px 24px; background: linear-gradient(145deg, #f5c542, #e6b800); border: none; border-radius: 8px; color: #000; font-weight: bold; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
+        #tool-syair .btn-update:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--glow); }
+
         #tool-syair .main-card {
-            background: linear-gradient(180deg, rgba(17,17,17,0.95), rgba(0,0,0,0.95)); border: 3px solid var(--elegant-gold); border-radius: 20px;
-            box-shadow: 0 0 30px rgba(245, 197, 66, 0.6), inset 0 0 40px rgba(245, 197, 66, 0.15);
-            padding: 25px; width: 100%; max-width: 800px; display: flex; flex-direction: column; gap: 20px;
-            color: #ffd86b; box-sizing: border-box; position: relative; overflow: hidden;
+            background: linear-gradient(180deg, rgba(17,17,17,0.96), rgba(0,0,0,0.96));
+            border: 3px solid var(--gold); border-radius: 20px;
+            box-shadow: 0 0 30px rgba(245,197,66,0.5), inset 0 0 30px rgba(245,197,66,0.1);
+            padding: 22px; width: 100%; max-width: 780px;
+            display: flex; flex-direction: column; gap: 16px;
+            color: var(--glow); box-sizing: border-box; position: relative; overflow: hidden;
             backdrop-filter: blur(14px);
         }
         #tool-syair .main-card::before {
             content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px;
-            background: linear-gradient(45deg, transparent, rgba(245, 197, 66, 0.1), rgba(245, 197, 66, 0.3), rgba(245, 197, 66, 0.1), transparent);
-            border-radius: 22px; z-index: 1; pointer-events: none; animation: shimmer 3s infinite linear;
+            background: linear-gradient(45deg, transparent, rgba(245,197,66,0.1), rgba(245,197,66,0.25), rgba(245,197,66,0.1), transparent);
+            background-size: 300px 300px; border-radius: 22px; z-index: 1; pointer-events: none;
+            animation: shimmer 4s infinite linear;
         }
-        @keyframes shimmer { 0% { background-position: -150px 0; } 100% { background-position: 150px 0; } }
-        #tool-syair .main-card::after { content: ''; position: absolute; top: 8px; left: 8px; right: 8px; bottom: 8px; border: 1px solid rgba(245, 197, 66, 0.2); border-radius: 16px; pointer-events: none; z-index: 1; }
+        @keyframes shimmer { 0% { background-position: -300px 0; } 100% { background-position: 300px 0; } }
+        #tool-syair .main-card::after {
+            content: ''; position: absolute; top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px solid rgba(245,197,66,0.15); border-radius: 16px; pointer-events: none; z-index: 1;
+        }
         #tool-syair .main-card > * { position: relative; z-index: 2; }
-        #tool-syair .syair-header, #tool-syair .compass-card, #tool-syair .extra-cards .card, #tool-syair .footer-card, #tool-syair .locations-card, #tool-syair .shio-card {
-            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%); border: 2px solid var(--elegant-gold); border-radius: 15px;
-            box-shadow: inset 0 0 15px rgba(245, 197, 66, 0.15), 0 0 15px rgba(245, 197, 66, 0.4);
-            color: var(--gold-glow); position: relative; overflow: hidden;
+
+        #tool-syair .syair-header,
+        #tool-syair .compass-card,
+        #tool-syair .extra-cards .card,
+        #tool-syair .footer-card,
+        #tool-syair .locations-card,
+        #tool-syair .shio-card {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            border: 2px solid var(--gold); border-radius: 12px;
+            box-shadow: inset 0 0 12px rgba(245,197,66,0.1), 0 0 12px rgba(245,197,66,0.3);
+            color: var(--glow); position: relative; overflow: hidden;
         }
-        #tool-syair .syair-header { padding: 20px; text-align: center; }
-        #tool-syair .syair-header h2 { margin: 0 0 5px 0; font-size: 24px; text-shadow: 0 0 10px var(--elegant-gold); color: var(--elegant-gold); letter-spacing: 1px; font-weight: 700; }
-        /* Logo CITAWIN dihapus - langsung tampil tanggal */
-        #tool-syair .date-text { font-size: 16px; text-shadow: 0 0 6px var(--elegant-gold); margin-top: 5px; color: #ffeebb; font-weight: 600; }
-        #tool-syair .syair-subtitle { margin-top: 8px; font-size: 16px; font-weight: bold; text-shadow: 0 0 10px var(--elegant-gold); color: #ffdd88; }
-        #tool-syair .middle-section { display: flex; flex-direction: column; gap: 20px; }
-        #tool-syair .compass-row { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        #tool-syair .compass-card { position: relative; width: 180px; height: 180px; display: flex; justify-content: center; align-items: center; border: 2px solid var(--elegant-gold); }
-        #tool-syair .compass-card img { width: 60%; height: 50%; border-radius: 12px; border: 1px solid var(--elegant-gold); box-shadow: 0 0 12px rgba(245, 197, 66, 0.3); }
-        #tool-syair .random-number { position: absolute; color: var(--elegant-gold); font-size: 20px; font-weight: bold; text-shadow: 0 0 10px var(--elegant-gold); background: rgba(102, 85, 0, 0.7); width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--elegant-gold); }
-        #tool-syair .top { top: 8px; left: 50%; transform: translateX(-50%); }
-        #tool-syair .bottom { bottom: 8px; left: 50%; transform: translateX(-50%); }
-        #tool-syair .left { left: 8px; top: 50%; transform: translateY(-50%); }
-        #tool-syair .right { right: 8px; top: 50%; transform: translateY(-50%); }
-        #tool-syair .shio-row { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        #tool-syair .shio-card { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px; gap: 10px; width: 100%; max-width: 280px; min-height: 380px; border: 2px solid var(--elegant-gold); }
-        #tool-syair .shio-image { width: 220px; height: 220px; background-size: contain; background-repeat: no-repeat; background-position: center; border-radius: 15px; border: 2px solid var(--elegant-gold); box-shadow: 0 0 15px rgba(245, 197, 66, 0.4); }
-        #tool-syair .shio-info { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
-        #tool-syair .shio-info h2 { margin: 10px 0 0 0; font-size: 18px; text-shadow: 0 0 10px var(--elegant-gold); color: var(--elegant-gold); font-weight: 700; }
-        #tool-syair .shio-angka-tengah { font-size: 32px; font-weight: bold; color: var(--elegant-gold); text-shadow: 0 0 15px var(--elegant-gold); background: linear-gradient(145deg, #1a1a1a, #000); padding: 10px 25px; border-radius: 15px; border: 1px solid var(--elegant-gold); box-shadow: inset 0 0 15px rgba(245, 197, 66, 0.2); margin: 8px 0; letter-spacing: 2px; min-width: 80px; text-align: center; }
-        #tool-syair .extra-cards { display: flex; gap: 10px; justify-content: center; }
-        #tool-syair .extra-cards .card { text-align: center; padding: 12px 15px; min-width: 80px; }
-        #tool-syair .extra-cards h3 { margin: 0; font-size: 16px; text-shadow: 0 0 8px var(--elegant-gold); color: var(--elegant-gold); }
-        #tool-syair .extra-cards p { margin: 6px 0 0 0; font-size: 14px; font-weight: bold; color: #ffdd88; }
-        
-        /* Footer Card - Pantun saja tanpa tombol */
-        #tool-syair .footer-card { padding: 20px; text-align: center; font-size: 14px; font-weight: 600; color: #ffdd88; line-height: 1.4; }
-        #tool-syair .pantun-text {
-            font-style: italic;
-            font-size: 13px;
-            line-height: 1.7;
-            color: #fff;
-            background: rgba(0,0,0,0.3);
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: 1px solid rgba(245, 197, 66, 0.2);
-            min-height: 80px;
+
+        #tool-syair .syair-header { padding: 16px; text-align: center; }
+        #tool-syair .syair-header h2 { margin: 0 0 4px 0; font-size: 22px; text-shadow: 0 0 10px var(--gold); color: var(--gold); letter-spacing: 2px; font-weight: 700; }
+        #tool-syair .date-text { font-size: 14px; text-shadow: 0 0 6px var(--gold); margin-top: 4px; color: #ffeebb; font-weight: 600; }
+        #tool-syair .syair-subtitle { margin-top: 6px; font-size: 15px; font-weight: bold; text-shadow: 0 0 10px var(--gold); color: #ffdd88; }
+
+        /* Grid 2 kolom */
+        #tool-syair .middle-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            align-items: start;
+        }
+
+        #tool-syair .compass-col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        #tool-syair .compass-card { position: relative; width: 170px; height: 170px; display: flex; justify-content: center; align-items: center; flex-shrink: 0; }
+        #tool-syair .compass-card img { width: 58%; height: 48%; border-radius: 10px; border: 1px solid var(--gold); box-shadow: 0 0 10px rgba(245,197,66,0.3); }
+        #tool-syair .random-number { position: absolute; color: var(--gold); font-size: 18px; font-weight: bold; text-shadow: 0 0 8px var(--gold); background: rgba(102,85,0,0.75); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--gold); }
+        #tool-syair .rn-top { top: 6px; left: 50%; transform: translateX(-50%); }
+        #tool-syair .rn-bottom { bottom: 6px; left: 50%; transform: translateX(-50%); }
+        #tool-syair .rn-left { left: 6px; top: 50%; transform: translateY(-50%); }
+        #tool-syair .rn-right { right: 6px; top: 50%; transform: translateY(-50%); }
+
+        #tool-syair .extra-cards { display: flex; gap: 10px; justify-content: center; width: 100%; }
+        #tool-syair .extra-cards .card { text-align: center; padding: 10px 14px; flex: 1; min-width: 0; }
+        #tool-syair .extra-cards h3 { margin: 0; font-size: 14px; text-shadow: 0 0 8px var(--gold); color: var(--gold); }
+        #tool-syair .extra-cards p { margin: 5px 0 0 0; font-size: 15px; font-weight: bold; color: #ffdd88; letter-spacing: 2px; }
+
+        #tool-syair .shio-col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        #tool-syair .shio-card { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px; gap: 8px; width: 100%; }
+        #tool-syair .shio-image { width: 180px; height: 180px; background-size: contain; background-repeat: no-repeat; background-position: center; border-radius: 12px; border: 2px solid var(--gold); box-shadow: 0 0 12px rgba(245,197,66,0.3); background-color: rgba(0,0,0,0.3); }
+        #tool-syair .shio-info { display: flex; flex-direction: column; align-items: center; width: 100%; }
+        #tool-syair .shio-info h2 { margin: 0; font-size: 17px; text-shadow: 0 0 10px var(--gold); color: var(--gold); font-weight: 700; }
+        #tool-syair .shio-angka-tengah { font-size: 30px; font-weight: bold; color: var(--gold); text-shadow: 0 0 15px var(--gold); background: linear-gradient(145deg, #1a1a1a, #000); padding: 8px 22px; border-radius: 12px; border: 1px solid var(--gold); box-shadow: inset 0 0 12px rgba(245,197,66,0.15); letter-spacing: 3px; min-width: 70px; text-align: center; }
+
+        #tool-syair .footer-card { padding: 16px; text-align: center; }
+        #tool-syair .pantun-text { font-style: italic; font-size: 13px; line-height: 1.7; color: #fff; background: rgba(0,0,0,0.3); padding: 12px 15px; border-radius: 8px; border: 1px solid rgba(245,197,66,0.15); min-height: 70px; display: flex; align-items: center; justify-content: center; }
+
+        #tool-syair .link-outside { font-size: 16px; font-weight: bold; color: var(--gold); text-align: center; text-shadow: 0 0 10px var(--gold); letter-spacing: 1px; padding: 10px; background: linear-gradient(45deg, rgba(245,197,66,0.15), rgba(102,85,0,0.15)); border-radius: 10px; border: 1px solid var(--gold); text-decoration: none; display: block; }
+
+        /* === PASARAN: SATU NAMA, BERGANTIAN === */
+        #tool-syair .locations-card { padding: 14px; text-align: center; }
+        #tool-syair .locations-card h3 { margin: 0 0 10px 0; font-size: 15px; text-shadow: 0 0 8px var(--gold); color: var(--gold); letter-spacing: 2px; }
+        #tool-syair .pasaran-display {
+            min-height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
-        #tool-syair .link-CITAWIN-outside { margin-top: 15px; font-size: 18px; font-weight: bold; color: var(--elegant-gold); text-align: center; text-shadow: 0 0 10px var(--elegant-gold); letter-spacing: 1px; padding: 10px; background: linear-gradient(45deg, rgba(245, 197, 66, 0.2), rgba(102, 85, 0, 0.2)); border-radius: 8px; border: 1px solid var(--elegant-gold); text-decoration: none; display: block; }
-        #tool-syair .locations-card { margin-top: 15px; padding: 15px; text-align: center; }
-        #tool-syair .locations-card h3 { margin: 0 0 10px 0; font-size: 16px; text-shadow: 0 0 8px var(--elegant-gold); color: var(--elegant-gold); }
-        #tool-syair .locations-list span { background: linear-gradient(180deg, rgba(245, 197, 66, 0.2), rgba(102, 85, 0, 0.2)); padding: 8px 15px; border-radius: 10px; font-weight: bold; font-size: 14px; box-shadow: 0 0 10px rgba(245, 197, 66, 0.5); color: var(--gold-glow); display: inline-block; margin: 4px; border: 1px solid var(--elegant-gold); }
-        @media (min-width: 768px) { #tool-syair .main-card { padding: 30px; max-width: 700px; } #tool-syair .middle-section { flex-direction: row; justify-content: space-between; } #tool-syair .compass-row { flex-direction: column; align-items: center; width: 48%; } #tool-syair .shio-row { width: 48%; justify-content: center; } #tool-syair .extra-cards { flex-direction: row; justify-content: center; width: 100%; } }
-        @media (max-width: 480px) { #tool-syair .control-panel { padding: 15px; } #tool-syair .input-group { flex-direction: column; } #tool-syair { padding: 10px; } #tool-syair .main-card { padding: 15px; border-radius: 15px; } #tool-syair .compass-card { width: 150px; height: 150px; } #tool-syair .shio-card { min-height: 320px; } #tool-syair .shio-image { width: 180px; height: 180px; } #tool-syair .extra-cards { flex-direction: column; align-items: center; } }
-
-        /* =========================================
-           TOOL 5: LIVE DRAW TOGEL STYLES
-           ========================================= */
-        :root {
-            --ld-primary-gold: #F5C542;
-            --ld-dark-bg: #050505;
-            --ld-border-color: rgba(245, 197, 66, 0.3);
+        #tool-syair .pasaran-name {
+            background: linear-gradient(180deg, rgba(245,197,66,0.25), rgba(102,85,0,0.25));
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 16px;
+            box-shadow: 0 0 15px rgba(245,197,66,0.5);
+            color: var(--glow);
+            border: 2px solid var(--gold);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            animation: pasaranPop 0.4s ease;
+        }
+        @keyframes pasaranPop {
+            0% { opacity: 0; transform: scale(0.8) translateY(8px); }
+            60% { transform: scale(1.05) translateY(-2px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        #tool-livedraw .app-container-ld {
-            display: flex; height: 100%; width: 100%; position: relative;
+        @media (max-width: 520px) {
+            #tool-syair { padding: 10px; }
+            #tool-syair .main-card { padding: 14px; border-radius: 14px; }
+            #tool-syair .middle-section { grid-template-columns: 1fr; gap: 12px; }
+            #tool-syair .compass-card { width: 150px; height: 150px; }
+            #tool-syair .shio-image { width: 150px; height: 150px; }
+            #tool-syair .cp-inputs { flex-direction: column; }
+            #tool-syair .pasaran-name { font-size: 13px; padding: 8px 18px; letter-spacing: 1px; }
         }
-        #tool-livedraw .app-container-ld::before { display: none; }
 
-        #tool-livedraw .sidebar-left-ld {
-            width: 280px; min-width: 280px; height: 100%;
-            background: rgba(5, 5, 5, 0.96); backdrop-filter: blur(14px);
-            border-right: 1px solid var(--ld-border-color);
-            display: flex; flex-direction: column;
-            position: relative; z-index: 10; transition: all 0.3s ease;
-        }
+        /* TOOL 5: LIVE DRAW */
+        :root { --ld-gold: #F5C542; --ld-border: rgba(245,197,66,0.3); }
+        #tool-livedraw .app-container-ld { display: flex; height: 100%; width: 100%; position: relative; }
+        #tool-livedraw .sidebar-left-ld { width: 280px; min-width: 280px; height: 100%; background: rgba(5,5,5,0.96); backdrop-filter: blur(14px); border-right: 1px solid var(--ld-border); display: flex; flex-direction: column; position: relative; z-index: 10; transition: all 0.3s ease; }
         #tool-livedraw .sidebar-hidden-ld { width: 0; min-width: 0; overflow: hidden; border: none; }
-
-        #tool-livedraw .sidebar-header-ld {
-            padding: 20px; background: #000;
-            border-bottom: 2px solid var(--ld-primary-gold);
-            text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-        #tool-livedraw .sidebar-header-ld h2 { font-family: 'Orbitron', sans-serif; color: var(--ld-primary-gold); font-size: 18px; letter-spacing: 2px; text-transform: uppercase; }
+        #tool-livedraw .sidebar-header-ld { padding: 20px; background: #000; border-bottom: 2px solid var(--ld-gold); text-align: center; }
+        #tool-livedraw .sidebar-header-ld h2 { font-family: 'Orbitron', sans-serif; color: var(--ld-gold); font-size: 18px; letter-spacing: 2px; text-transform: uppercase; }
         #tool-livedraw .sidebar-content-ld { flex: 1; overflow-y: auto; padding: 15px; }
         #tool-livedraw .sidebar-content-ld::-webkit-scrollbar { width: 4px; }
-        #tool-livedraw .sidebar-content-ld::-webkit-scrollbar-thumb { background: var(--ld-primary-gold); border-radius: 10px; }
-
-        #tool-livedraw .btn-add-market-ld { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--ld-primary-gold); border-radius: 8px; background: transparent; color: var(--ld-primary-gold); font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; font-size: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        #tool-livedraw .btn-add-market-ld:hover { background: rgba(245, 197, 66, 0.1); }
-        
+        #tool-livedraw .sidebar-content-ld::-webkit-scrollbar-thumb { background: var(--ld-gold); border-radius: 10px; }
+        #tool-livedraw .btn-add-market-ld { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--ld-gold); border-radius: 8px; background: transparent; color: var(--ld-gold); font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; font-size: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        #tool-livedraw .btn-add-market-ld:hover { background: rgba(245,197,66,0.1); }
         #tool-livedraw .backup-btn-group { display: flex; gap: 10px; margin-bottom: 15px; }
         #tool-livedraw .backup-btn { flex: 1; padding: 10px; border-radius: 8px; border: none; font-weight: 700; font-size: 11px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; }
         #tool-livedraw .btn-export-ld { background: #0088ff; color: white; }
         #tool-livedraw .btn-import-ld { background: #28a745; color: white; }
-
         #tool-livedraw .market-list-ld { display: flex; flex-direction: column; gap: 8px; }
-        #tool-livedraw .market-item-ld { position: relative; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; overflow: hidden; transition: all 0.3s; }
-        #tool-livedraw .market-item-ld:hover { background: rgba(255, 255, 255, 0.05); }
-        #tool-livedraw .market-item-ld.active-ld { background: rgba(245, 197, 66, 0.05); border: 1px solid var(--ld-primary-gold); }
+        #tool-livedraw .market-item-ld { position: relative; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; transition: all 0.3s; }
+        #tool-livedraw .market-item-ld:hover { background: rgba(255,255,255,0.05); }
+        #tool-livedraw .market-item-ld.active-ld { background: rgba(245,197,66,0.05); border: 1px solid var(--ld-gold); }
         #tool-livedraw .market-btn-ld { width: 100%; padding: 12px 15px; background: transparent; border: none; color: #fff; text-align: left; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 12px; }
-        #tool-livedraw .market-item-ld.active-ld .market-btn-ld { color: var(--ld-primary-gold); }
+        #tool-livedraw .market-item-ld.active-ld .market-btn-ld { color: var(--ld-gold); }
         #tool-livedraw .m-icon-ld { width: 35px; height: 35px; background: #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; border: 1px solid rgba(255,255,255,0.1); overflow: hidden; flex-shrink: 0; }
         #tool-livedraw .m-icon-ld img { width: 100%; height: 100%; object-fit: cover; }
         #tool-livedraw .m-name-ld { flex: 1; letter-spacing: 0.5px; }
@@ -328,48 +319,45 @@
         #tool-livedraw .m-btn-small-ld { width: 22px; height: 22px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; }
         #tool-livedraw .btn-upload-ld { background: #2e86de; }
         #tool-livedraw .btn-delete-ld { background: #ff4757; }
-
         #tool-livedraw .main-content-right-ld { flex: 1; height: 100%; display: flex; flex-direction: column; position: relative; z-index: 10; padding: 20px; }
         #tool-livedraw .live-header-ld { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding: 0 10px; }
-        #tool-livedraw .live-title-ld { font-family: 'Orbitron', sans-serif; font-size: 24px; color: var(--ld-primary-gold); text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        #tool-livedraw .live-title-ld { font-family: 'Orbitron', sans-serif; font-size: 24px; color: var(--ld-gold); text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; font-weight: 700; }
         #tool-livedraw .live-title-ld i { color: #ff4757; font-size: 14px; }
         #tool-livedraw .live-controls-ld { display: flex; gap: 10px; align-items: center; }
-        #tool-livedraw .current-market-badge-ld { background: rgba(0,0,0,0.6); border: 1px solid var(--ld-primary-gold); padding: 8px 20px; border-radius: 30px; color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(6px); }
+        #tool-livedraw .current-market-badge-ld { background: rgba(0,0,0,0.6); border: 1px solid var(--ld-gold); padding: 8px 20px; border-radius: 30px; color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; gap: 8px; backdrop-filter: blur(6px); }
         #tool-livedraw .btn-action-ld { padding: 8px 15px; border-radius: 6px; border: none; cursor: pointer; font-weight: 700; font-size: 12px; display: flex; align-items: center; gap: 5px; transition: 0.2s; text-transform: uppercase; }
         #tool-livedraw .btn-refresh-ld { background: #28a745; color: white; }
         #tool-livedraw .btn-edit-ld { background: #ffc107; color: #000; }
         #tool-livedraw .btn-toggle-ld { background: rgba(0,0,0,0.6); color: white; border: 1px solid #444; backdrop-filter: blur(6px); }
-
-        #tool-livedraw .iframe-box-ld { flex: 1; background: rgba(0,0,0,0.7); border-radius: 15px; border: 2px solid var(--ld-primary-gold); overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: column; backdrop-filter: blur(6px); }
+        #tool-livedraw .iframe-box-ld { flex: 1; background: rgba(0,0,0,0.7); border-radius: 15px; border: 2px solid var(--ld-gold); overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; flex-direction: column; backdrop-filter: blur(6px); }
         #tool-livedraw .iframe-header-overlay-ld { position: absolute; top: 0; left: 0; right: 0; padding: 8px 15px; background: rgba(0,0,0,0.6); display: flex; justify-content: space-between; z-index: 5; border-bottom: 1px solid rgba(255,255,255,0.1); }
         #tool-livedraw .iframe-brand-ld { font-size: 10px; color: #aaa; }
-        #tool-livedraw .iframe-brand-ld span { color: var(--ld-primary-gold); font-weight: bold; }
+        #tool-livedraw .iframe-brand-ld span { color: var(--ld-gold); font-weight: bold; }
         #tool-livedraw #ld_liveFrame { width: 100%; height: 100%; border: none; margin-top: 30px; }
         #tool-livedraw .loading-screen-ld { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10; transition: opacity 0.3s; }
         #tool-livedraw .loading-screen-ld.hidden-ld { opacity: 0; pointer-events: none; }
-        #tool-livedraw .spinner-ld { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--ld-primary-gold); border-radius: 50%; animation: spin 1s linear infinite; }
+        #tool-livedraw .spinner-ld { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--ld-gold); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { to { transform: rotate(360deg); } }
-        #tool-livedraw .loading-text-ld { margin-top: 10px; color: var(--ld-primary-gold); font-size: 12px; letter-spacing: 1px; }
-
+        #tool-livedraw .loading-text-ld { margin-top: 10px; color: var(--ld-gold); font-size: 12px; letter-spacing: 1px; }
         .ld-modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; justify-content: center; align-items: center; }
-        .ld-modal-content { background: #0a0a0a; border: 1px solid var(--ld-primary-gold); padding: 25px; width: 90%; max-width: 450px; border-radius: 10px; box-shadow: 0 0 20px rgba(245, 197, 66, 0.2); }
-        .ld-modal-title { color: var(--ld-primary-gold); font-size: 16px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; text-align: center; }
+        .ld-modal-content { background: #0a0a0a; border: 1px solid var(--ld-gold); padding: 25px; width: 90%; max-width: 450px; border-radius: 10px; box-shadow: 0 0 20px rgba(245,197,66,0.2); }
+        .ld-modal-title { color: var(--ld-gold); font-size: 16px; margin-bottom: 20px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; text-align: center; }
         .ld-input-group { margin-bottom: 15px; }
         .ld-input-style { width: 100%; padding: 10px; background: #111; border: 1px solid #333; border-radius: 5px; color: white; font-size: 14px; }
-        .ld-input-style:focus { border-color: var(--ld-primary-gold); outline: none; }
+        .ld-input-style:focus { border-color: var(--ld-gold); outline: none; }
         .ld-btn-group { display: flex; gap: 10px; margin-top: 20px; }
         .ld-btn-modal { flex: 1; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: 600; font-size: 13px; }
-        .ld-btn-save { background: var(--ld-primary-gold); color: #000; }
+        .ld-btn-save { background: var(--ld-gold); color: #000; }
         .ld-btn-cancel { background: #333; color: #fff; }
         .ld-emoji-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 10px; max-height: 100px; overflow-y: auto; padding: 5px; background: #111; border-radius: 5px; }
         .ld-emoji-item { font-size: 20px; text-align: center; cursor: pointer; padding: 5px; border-radius: 4px; transition: 0.2s; }
         .ld-emoji-item:hover { background: #222; }
-        .ld-emoji-item.selected-ld { background: rgba(245, 197, 66, 0.2); border: 1px solid var(--ld-primary-gold); }
+        .ld-emoji-item.selected-ld { background: rgba(245,197,66,0.2); border: 1px solid var(--ld-gold); }
         .ld-upload-section { margin-top: 10px; padding-top: 10px; border-top: 1px solid #333; text-align: center; }
         .ld-file-input { display: none; }
         .ld-upload-label { display: inline-block; padding: 8px 15px; background: #222; border: 1px dashed #555; color: #aaa; border-radius: 5px; cursor: pointer; font-size: 12px; transition: 0.2s; }
-        .ld-upload-label:hover { border-color: var(--ld-primary-gold); color: #fff; }
-        .ld-preview-img { max-width: 60px; max-height: 60px; margin-top: 10px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ld-primary-gold); display: none; }
+        .ld-upload-label:hover { border-color: var(--ld-gold); color: #fff; }
+        .ld-preview-img { max-width: 60px; max-height: 60px; margin-top: 10px; border-radius: 50%; object-fit: cover; border: 2px solid var(--ld-gold); display: none; }
         @media (max-width: 768px) {
             #tool-livedraw .sidebar-left-ld { position: absolute; left: 0; z-index: 20; box-shadow: 5px 0 20px rgba(0,0,0,0.8); }
             #tool-livedraw .sidebar-hidden-ld { transform: translateX(-100%); }
@@ -377,55 +365,42 @@
             #tool-livedraw .current-market-badge-ld { display: none; }
         }
 
-        /* =========================================
-           TOOL 6: REPOTAN (LAPORAN) STYLES
-           ========================================= */
+        /* TOOL 6: REPOTAN */
         #tool-repotan::before { display: none; }
-        
         .rep-main-wrapper { width: 100%; max-width: 1200px; }
         .rep-content-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 25px; }
-        .rep-input-column {
-            background: rgba(20, 20, 30, 0.88); backdrop-filter: blur(14px);
-            border: 2px solid #f5c542; border-radius: 20px; padding: 25px; height: fit-content;
-        }
-        .rep-archive-column {
-            background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(14px);
-            border: 2px solid #f5c542; border-radius: 20px; padding: 20px;
-            display: flex; flex-direction: column; max-height: 85vh;
-        }
+        .rep-input-column { background: rgba(20,20,30,0.88); backdrop-filter: blur(14px); border: 2px solid #f5c542; border-radius: 20px; padding: 25px; height: fit-content; }
+        .rep-archive-column { background: rgba(10,10,10,0.92); backdrop-filter: blur(14px); border: 2px solid #f5c542; border-radius: 20px; padding: 20px; display: flex; flex-direction: column; max-height: 85vh; }
         .rep-form-group { margin-bottom: 20px; }
         .rep-form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #FFD700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .rep-form-control { width: 100%; padding: 12px 15px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 10px; color: #fff; font-family: 'Poppins', sans-serif; font-size: 14px; transition: all 0.3s; }
-        .rep-form-control:focus { outline: none; border-color: #FFD700; background: rgba(255, 255, 255, 0.1); box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
+        .rep-form-control { width: 100%; padding: 12px 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,215,0,0.3); border-radius: 10px; color: #fff; font-family: 'Poppins', sans-serif; font-size: 14px; transition: all 0.3s; }
+        .rep-form-control:focus { outline: none; border-color: #FFD700; background: rgba(255,255,255,0.1); box-shadow: 0 0 10px rgba(255,215,0,0.2); }
         textarea.rep-form-control { resize: vertical; min-height: 80px; }
         .rep-btn-group { display: flex; gap: 15px; margin-top: 10px; margin-bottom: 20px; }
         .rep-btn { flex: 1; padding: 12px 20px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 8px; }
         .rep-btn-primary { background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; }
-        .rep-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4); }
-        .rep-btn-secondary { background: rgba(255, 255, 255, 0.1); color: #FFD700; border: 2px solid #FFD700; }
-        .rep-btn-secondary:hover { background: rgba(255, 215, 0, 0.1); }
-        .rep-save-btn-main { width: 100%; margin-bottom: 15px; padding: 15px; background: linear-gradient(135deg, #28a745, #218838); color: #fff; border: none; border-radius: 15px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3); }
-        .rep-save-btn-main:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5); }
-
-        /* Backup Button Group untuk Repotan */
+        .rep-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,215,0,0.4); }
+        .rep-btn-secondary { background: rgba(255,255,255,0.1); color: #FFD700; border: 2px solid #FFD700; }
+        .rep-btn-secondary:hover { background: rgba(255,215,0,0.1); }
+        .rep-save-btn-main { width: 100%; margin-bottom: 15px; padding: 15px; background: linear-gradient(135deg, #28a745, #218838); color: #fff; border: none; border-radius: 15px; font-weight: 800; font-size: 16px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; text-transform: uppercase; box-shadow: 0 4px 15px rgba(40,167,69,0.3); }
+        .rep-save-btn-main:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(40,167,69,0.5); }
         .rep-backup-group { display: flex; gap: 10px; margin-bottom: 15px; }
         .rep-backup-btn { flex: 1; padding: 12px; border-radius: 12px; border: none; font-weight: 700; font-size: 12px; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
         .rep-backup-btn:hover { transform: translateY(-2px); }
-        .rep-btn-export { background: linear-gradient(135deg, #0088ff, #0066cc); color: white; box-shadow: 0 4px 12px rgba(0, 136, 255, 0.3); }
-        .rep-btn-import { background: linear-gradient(135deg, #28a745, #1e7e34); color: white; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3); }
-        .rep-btn-clear-all { background: linear-gradient(135deg, #dc3545, #c82333); color: white; box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3); }
-
-        .rep-preview-area { background: rgba(0, 0, 0, 0.4); border: 2px dashed #f5c542; border-radius: 16px; padding: 18px; margin-top: 5px; }
+        .rep-btn-export { background: linear-gradient(135deg, #0088ff, #0066cc); color: white; box-shadow: 0 4px 12px rgba(0,136,255,0.3); }
+        .rep-btn-import { background: linear-gradient(135deg, #28a745, #1e7e34); color: white; box-shadow: 0 4px 12px rgba(40,167,69,0.3); }
+        .rep-btn-clear-all { background: linear-gradient(135deg, #dc3545, #c82333); color: white; box-shadow: 0 4px 12px rgba(220,53,69,0.3); }
+        .rep-preview-area { background: rgba(0,0,0,0.4); border: 2px dashed #f5c542; border-radius: 16px; padding: 18px; margin-top: 5px; }
         .rep-preview-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: #FFD700; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .rep-preview-box { background: rgba(0, 0, 0, 0.6); border-radius: 12px; padding: 15px; white-space: pre-wrap; font-family: 'Segoe UI', monospace; font-size: 13px; line-height: 1.6; color: #f0f0f0; border: 1px solid rgba(255,215,0,0.3); max-height: 250px; overflow-y: auto; word-break: break-word; }
+        .rep-preview-box { background: rgba(0,0,0,0.6); border-radius: 12px; padding: 15px; white-space: pre-wrap; font-family: 'Segoe UI', monospace; font-size: 13px; line-height: 1.6; color: #f0f0f0; border: 1px solid rgba(255,215,0,0.3); max-height: 250px; overflow-y: auto; word-break: break-word; }
         .rep-preview-box:empty::before { content: "Hasil generate akan muncul di sini..."; color: #888; font-style: italic; }
         .rep-archive-title { color: #FFD700; font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid rgba(255,215,0,0.3); padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
         .rep-archive-list { flex: 1; overflow-y: auto; padding-right: 5px; }
         .rep-archive-list::-webkit-scrollbar { width: 6px; }
         .rep-archive-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 10px; }
         .rep-archive-list::-webkit-scrollbar-thumb { background: #FFD700; border-radius: 10px; }
-        .rep-archive-item { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-left: 4px solid #FFD700; padding: 15px; margin-bottom: 15px; border-radius: 0 10px 10px 0; transition: all 0.3s; }
-        .rep-archive-item:hover { background: rgba(255, 255, 255, 0.05); border-color: #FFD700; }
+        .rep-archive-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-left: 4px solid #FFD700; padding: 15px; margin-bottom: 15px; border-radius: 0 10px 10px 0; transition: all 0.3s; }
+        .rep-archive-item:hover { background: rgba(255,255,255,0.05); border-color: #FFD700; }
         .rep-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
         .rep-item-title { font-weight: 700; color: #fff; font-size: 14px; }
         .rep-item-time { font-size: 11px; color: #888; }
@@ -437,11 +412,7 @@
         .rep-btn-delete-xs { background: #dc3545; color: #fff; }
         @media (max-width: 900px) { .rep-content-grid { grid-template-columns: 1fr; } .rep-archive-column { max-height: none; } }
 
-        .notification {
-            position: fixed; top: 90px; right: 20px; background: linear-gradient(135deg, #00ff88, #00cc77); color: #000;
-            padding: 15px 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: none; z-index: 10000;
-            font-weight: bold; animation: slideIn 0.3s ease;
-        }
+        .notification { position: fixed; top: 90px; right: 20px; background: linear-gradient(135deg, #00ff88, #00cc77); color: #000; padding: 15px 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: none; z-index: 10000; font-weight: bold; animation: slideIn 0.3s ease; }
         @keyframes slideIn { from { transform: translateX(100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
     </style>
 </head>
@@ -462,9 +433,7 @@
 
     <div id="notification" class="notification">Notifikasi</div>
 
-    <!-- =========================================
-         TOOL 1: JACKPOT GENERATOR
-         ========================================= -->
+    <!-- TOOL 1: JACKPOT -->
     <div id="tool-jackpot" class="tool-container">
         <div class="container">
             <h1><i class="fas fa-trophy"></i> CITAWIN <i class="fas fa-crown"></i></h1>
@@ -483,34 +452,27 @@
             </div>
             <div class="input-group">
                 <label><i class="fas fa-image"></i> Upload Bukti Transfer</label>
-                <div class="file-upload">
-                    <label for="jp_gambar" class="file-upload-label">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                        <span id="jp_fileName">Pilih file screenshot...</span>
-                    </label>
-                    <input type="file" id="jp_gambar" accept="image/*">
-                </div>
+                <label for="jp_gambar" class="file-upload-label">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span id="jp_fileName">Pilih file screenshot...</span>
+                </label>
+                <input type="file" id="jp_gambar" accept="image/*" style="display:none">
             </div>
             <div class="button-group">
                 <button class="btn btn-primary" onclick="generateJackpot()"><i class="fas fa-magic"></i> Generate</button>
                 <button class="btn btn-secondary" onclick="copyJackpot()"><i class="far fa-copy"></i> Copy</button>
             </div>
             <div class="result-container">
-                <div class="result-title" style="justify-content: space-between; border-bottom: none; padding-bottom: 0;">
-                    <span></span>
-                    <span style="color: #FFD700; font-size: 1.3rem; font-weight: 700;">CITAWIN</span>
-                </div>
+                <div style="text-align:right;"><span style="color:#FFD700;font-size:1.3rem;font-weight:700;">CITAWIN</span></div>
                 <div id="jp_hasil">Hasil generate akan muncul di sini...</div>
-                <img id="jp_preview" class="preview-image" alt="Preview Bukti Transfer">
+                <img id="jp_preview" class="preview-image" alt="Preview">
                 <div id="jp_placeholder" class="placeholder-image"><i class="fas fa-image"></i> Upload bukti transfer</div>
             </div>
             <div class="footer-note"><i class="fas fa-check-circle"></i> Withdraw LUNAS & DIBAYARKAN!</div>
         </div>
     </div>
 
-    <!-- =========================================
-         TOOL 2: QRIS CALCULATOR
-         ========================================= -->
+    <!-- TOOL 2: QRIS -->
     <div id="tool-qris" class="tool-container">
         <div class="overlay">
             <h3 class="qris">QRIS</h3>
@@ -525,27 +487,25 @@
         </div>
     </div>
 
-    <!-- =========================================
-         TOOL 3: PREDIKSI BOLA
-         ========================================= -->
+    <!-- TOOL 3: PREDIKSI -->
     <div id="tool-prediksi" class="tool-container">
         <div class="container">
             <div class="header">
-                <img class="logo" src="https://i.imgur.com/OF8tVx3.jpeg" alt="CITAWIN Logo">
+                <img class="logo" src="https://i.imgur.com/OF8tVx3.jpeg" alt="Logo">
                 <h1>ZEGER</h1>
                 <p>MUHAMMAD ROZI PRATAMA HRP</p>
             </div>
-            <div style="text-align: center; margin-bottom: 20px; color: #f5c542;">
+            <div style="text-align:center;margin-bottom:20px;color:#f5c542;">
                 <strong>📅 TANGGAL OTOMATIS</strong><br>
-                <div id="pred_dateDisplay" style="font-size: 24px; font-weight: bold; margin-top: 5px;">Loading...</div>
+                <div id="pred_dateDisplay" style="font-size:24px;font-weight:bold;margin-top:5px;">Loading...</div>
             </div>
             <div class="main-layout">
                 <div class="left-column">
                     <div class="section">
                         <h2>📝 INPUT PREDIKSI</h2>
-                        <div style="display:flex; gap:20px; margin-bottom:20px; padding:15px; background:rgba(245, 197, 66, 0.1); border-radius:10px;">
-                            <div style="flex:1; text-align:center;"><div style="font-size:12px; color:#fff;">Total Liga</div><div id="pred_totalLeagues" style="font-size:24px; font-weight:700; color:#f5c542;">0</div></div>
-                            <div style="flex:1; text-align:center;"><div style="font-size:12px; color:#fff;">Total Pertandingan</div><div id="pred_totalMatches" style="font-size:24px; font-weight:700; color:#f5c542;">0</div></div>
+                        <div style="display:flex;gap:20px;margin-bottom:20px;padding:15px;background:rgba(245,197,66,0.1);border-radius:10px;">
+                            <div style="flex:1;text-align:center;"><div style="font-size:12px;color:#fff;">Total Liga</div><div id="pred_totalLeagues" style="font-size:24px;font-weight:700;color:#f5c542;">0</div></div>
+                            <div style="flex:1;text-align:center;"><div style="font-size:12px;color:#fff;">Total Pertandingan</div><div id="pred_totalMatches" style="font-size:24px;font-weight:700;color:#f5c542;">0</div></div>
                         </div>
                         <textarea id="pred_inputText" placeholder="Masukkan prediksi..."></textarea>
                         <div class="button-group"><button class="btn-clear" onclick="clearPrediksi()">🗑️ Clear</button></div>
@@ -557,15 +517,15 @@
                     </div>
                 </div>
                 <div class="right-column">
-                    <div class="section" style="position: sticky; top: 80px;">
+                    <div class="section" style="position:sticky;top:80px;">
                         <h2>👁️ PREVIEW</h2>
-                        <div style="background: #000; border-radius: 15px; border: 3px solid #f5c542; overflow: hidden;">
-                            <div style="text-align: center; padding: 20px; background: linear-gradient(180deg, #1a1a1a, #000); border-bottom: 3px solid #f5c542;">
-                                <img src="https://i.pinimg.com/1200x/9d/b9/f1/9db9f12fa3c62bc6ff74919ebb800673.jpg" style="max-width: 150px; filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)); margin-bottom: 10px;">
-                                <h3 style="font-family: 'Orbitron'; color: #f5c542; margin-bottom: 5px;">ZEGER</h3>
-                                <div id="pred_previewDate" style="color: #f5c542; font-weight: bold;">-</div>
+                        <div style="background:#000;border-radius:15px;border:3px solid #f5c542;overflow:hidden;">
+                            <div style="text-align:center;padding:20px;background:linear-gradient(180deg,#1a1a1a,#000);border-bottom:3px solid #f5c542;">
+                                <img src="https://i.pinimg.com/1200x/9d/b9/f1/9db9f12fa3c62bc6ff74919ebb800673.jpg" style="max-width:150px;filter:drop-shadow(0 0 20px rgba(255,215,0,0.8));margin-bottom:10px;">
+                                <h3 style="font-family:'Orbitron';color:#f5c542;margin-bottom:5px;">ZEGER</h3>
+                                <div id="pred_previewDate" style="color:#f5c542;font-weight:bold;">-</div>
                             </div>
-                            <div id="pred_previewContent" style="padding: 20px; min-height: 200px;"></div>
+                            <div id="pred_previewContent" style="padding:20px;min-height:200px;"></div>
                         </div>
                     </div>
                 </div>
@@ -573,42 +533,41 @@
         </div>
     </div>
 
-    <!-- =========================================
-         TOOL 4: SYAIR SHIO (BERSIH - TANPA LOGO & TOMBOL)
-         ========================================= -->
+    <!-- TOOL 4: SYAIR SHIO -->
     <div id="tool-syair" class="tool-container active">
         <div class="control-panel">
-            <h3>PENGATURAN CEPAT</h3>
-            <div class="input-group">
+            <h3><i class="fas fa-cog"></i> PENGATURAN CEPAT</h3>
+            <div class="cp-inputs">
                 <input type="text" id="syair_inputShioUrl" class="input-field" placeholder="Link Gambar Shio..." />
                 <input type="text" id="syair_inputLinkUrl" class="input-field" placeholder="Link Heylink..." />
             </div>
-            <div style="text-align: center;">
-                <button class="btn-update" onclick="updateSyairContent()">UPDATE DATA</button>
+            <div style="text-align:center;">
+                <button class="btn-update" onclick="updateSyairContent()"><i class="fas fa-sync-alt"></i> UPDATE DATA</button>
             </div>
         </div>
+
         <div class="main-card">
             <div class="syair-header">
                 <h2>SYAIR TOGEL</h2>
-                <!-- Logo CITAWIN DIHAPUS -->
                 <div class="date-text" id="syair_currentDate"></div>
                 <p class="syair-subtitle">SYAIR TOGEL CITAWIN</p>
             </div>
+
             <div class="middle-section">
-                <div class="compass-row">
+                <div class="compass-col">
                     <div class="compass-card">
                         <img src="https://i.postimg.cc/J02cS7xF/POSTINGAN-KEMENANGAN-35.png" alt="Kemenangan">
-                        <div class="random-number top" id="syair_numTop">0</div>
-                        <div class="random-number bottom" id="syair_numBottom">0</div>
-                        <div class="random-number left" id="syair_numLeft">0</div>
-                        <div class="random-number right" id="syair_numRight">0</div>
+                        <div class="random-number rn-top" id="syair_numTop">0</div>
+                        <div class="random-number rn-bottom" id="syair_numBottom">0</div>
+                        <div class="random-number rn-left" id="syair_numLeft">0</div>
+                        <div class="random-number rn-right" id="syair_numRight">0</div>
                     </div>
                     <div class="extra-cards">
                         <div class="card"><h3>BBFS</h3><p id="syair_bbfsNumbers">1234567</p></div>
                         <div class="card"><h3>BEBAS</h3><p id="syair_bebasNumbers">1/1</p></div>
                     </div>
                 </div>
-                <div class="shio-row">
+                <div class="shio-col">
                     <div class="shio-card">
                         <div class="shio-image" id="syair_shioImage"></div>
                         <div class="shio-info">
@@ -618,21 +577,24 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-card" id="syair_footer">
+
+            <div class="footer-card">
                 <div class="pantun-text" id="syair_pantunDisplay"></div>
-                <!-- Tombol GANTI SYAIR DIHAPUS -->
             </div>
-            <a href="https://heylink.me/citawin" class="link-CITAWIN-outside" id="syair_targetLink">https://heylink.me/citawin</a>
+
+            <a href="https://heylink.me/citawin" class="link-outside" id="syair_targetLink">https://heylink.me/citawin</a>
+
+            <!-- PASARAN: SATU NAMA BERGANTIAN -->
             <div class="locations-card">
-                <h3>PASARAN</h3>
-                <div class="locations-list" id="syair_locationsList"></div>
+                <h3><i class="fas fa-globe-asia"></i> PASARAN</h3>
+                <div class="pasaran-display">
+                    <span class="pasaran-name" id="syair_pasaranNama">-</span>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- =========================================
-         TOOL 5: LIVE DRAW TOGEL
-         ========================================= -->
+    <!-- TOOL 5: LIVE DRAW -->
     <div id="tool-livedraw" class="tool-container">
         <div class="app-container-ld">
             <aside class="sidebar-left-ld" id="ld_sidebar">
@@ -651,7 +613,7 @@
                 <div class="live-header-ld">
                     <div>
                         <div class="live-title-ld"><i class="fas fa-circle"></i> LIVE DRAW</div>
-                        <div style="font-size: 12px; color: #aaa; margin-top: 2px; letter-spacing: 1px;">Real-time Result</div>
+                        <div style="font-size:12px;color:#aaa;margin-top:2px;letter-spacing:1px;">Real-time Result</div>
                     </div>
                     <div class="live-controls-ld">
                         <div class="current-market-badge-ld"><i class="fas fa-trophy"></i><span id="ld_displayMarket">Pilih Pasaran</span></div>
@@ -670,67 +632,21 @@
                 </div>
             </main>
         </div>
-        <div class="ld-modal-overlay" id="ld_addModal">
-            <div class="ld-modal-content">
-                <div class="ld-modal-title">Tambah Pasaran Baru</div>
-                <div class="ld-input-group"><input type="text" id="ld_inputNama" class="ld-input-style" placeholder="Nama Pasaran (Contoh: HOKIDRAW)"></div>
-                <div class="ld-input-group"><input type="text" id="ld_inputLink" class="ld-input-style" placeholder="Link Live Draw (https://...)"></div>
-                <div class="ld-input-group"><label style="font-size: 12px; color: #aaa;">Pilih Ikon Emoji:</label><div class="ld-emoji-grid" id="ld_emojiGridAdd"></div></div>
-                <div class="ld-upload-section">
-                    <label style="font-size: 12px; color: #aaa;">Atau Upload Gambar:</label><br>
-                    <input type="file" id="ld_fileInputAdd" class="ld-file-input" accept="image/*" onchange="ld_previewAddImage(this)">
-                    <label for="ld_fileInputAdd" class="ld-upload-label"><i class="fas fa-upload"></i> Pilih Gambar</label>
-                    <img id="ld_previewAddImg" class="ld-preview-img" src="" alt="Preview">
-                </div>
-                <div class="ld-btn-group"><button class="ld-btn-modal ld-btn-cancel" onclick="ld_closeModal('ld_addModal')">Batal</button><button class="ld-btn-modal ld-btn-save" onclick="ld_saveNewMarket()">Simpan</button></div>
-            </div>
-        </div>
-        <div class="ld-modal-overlay" id="ld_editModal">
-            <div class="ld-modal-content">
-                <div class="ld-modal-title">Edit Link Live</div>
-                <div class="ld-input-group"><input type="text" id="ld_editLinkInput" class="ld-input-style" placeholder="Link URL baru..."></div>
-                <div class="ld-btn-group"><button class="ld-btn-modal ld-btn-cancel" onclick="ld_closeModal('ld_editModal')">Batal</button><button class="ld-btn-modal ld-btn-save" onclick="ld_saveEditLink()">Simpan Perubahan</button></div>
-            </div>
-        </div>
-        <div class="ld-modal-overlay" id="ld_iconModal">
-            <div class="ld-modal-content">
-                <div class="ld-modal-title">Ganti Ikon Pasaran</div>
-                <div class="ld-input-group"><label style="font-size: 12px; color: #aaa;">Pilih Emoji Baru:</label><div class="ld-emoji-grid" id="ld_emojiGridEdit"></div></div>
-                <div class="ld-upload-section">
-                    <label style="font-size: 12px; color: #aaa;">Atau Upload Gambar Baru:</label><br>
-                    <input type="file" id="ld_fileInputEdit" class="ld-file-input" accept="image/*" onchange="ld_previewEditImage(this)">
-                    <label for="ld_fileInputEdit" class="ld-upload-label"><i class="fas fa-upload"></i> Pilih Gambar</label>
-                    <img id="ld_previewEditImg" class="ld-preview-img" src="" alt="Preview">
-                </div>
-                <div class="ld-btn-group"><button class="ld-btn-modal ld-btn-cancel" onclick="ld_closeModal('ld_iconModal')">Batal</button><button class="ld-btn-modal ld-btn-save" onclick="ld_saveIconChanges()">Simpan Ikon</button></div>
-            </div>
-        </div>
+        <div class="ld-modal-overlay" id="ld_addModal"><div class="ld-modal-content"><div class="ld-modal-title">Tambah Pasaran Baru</div><div class="ld-input-group"><input type="text" id="ld_inputNama" class="ld-input-style" placeholder="Nama Pasaran"></div><div class="ld-input-group"><input type="text" id="ld_inputLink" class="ld-input-style" placeholder="Link Live Draw"></div><div class="ld-input-group"><label style="font-size:12px;color:#aaa;">Pilih Ikon:</label><div class="ld-emoji-grid" id="ld_emojiGridAdd"></div></div><div class="ld-upload-section"><label style="font-size:12px;color:#aaa;">Atau Upload Gambar:</label><br><input type="file" id="ld_fileInputAdd" class="ld-file-input" accept="image/*" onchange="ld_previewAddImage(this)"><label for="ld_fileInputAdd" class="ld-upload-label"><i class="fas fa-upload"></i> Pilih Gambar</label><img id="ld_previewAddImg" class="ld-preview-img" src="" alt="Preview"></div><div class="ld-btn-group"><button class="ld-btn-modal ld-btn-cancel" onclick="ld_closeModal('ld_addModal')">Batal</button><button class="ld-btn-modal ld-btn-save" onclick="ld_saveNewMarket()">Simpan</button></div></div></div>
+        <div class="ld-modal-overlay" id="ld_editModal"><div class="ld-modal-content"><div class="ld-modal-title">Edit Link Live</div><div class="ld-input-group"><input type="text" id="ld_editLinkInput" class="ld-input-style" placeholder="Link URL baru..."></div><div class="ld-btn-group"><button class="ld-btn-modal ld-btn-cancel" onclick="ld_closeModal('ld_editModal')">Batal</button><button class="ld-btn-modal ld-btn-save" onclick="ld_saveEditLink()">Simpan</button></div></div></div>
+        <div class="ld-modal-overlay" id="ld_iconModal"><div class="ld-modal-content"><div class="ld-modal-title">Ganti Ikon Pasaran</div><div class="ld-input-group"><label style="font-size:12px;color:#aaa;">Pilih Emoji Baru:</label><div class="ld-emoji-grid" id="ld_emojiGridEdit"></div></div><div class="ld-upload-section"><label style="font-size:12px;color:#aaa;">Atau Upload Gambar Baru:</label><br><input type="file" id="ld_fileInputEdit" class="ld-file-input" accept="image/*" onchange="ld_previewEditImage(this)"><label for="ld_fileInputEdit" class="ld-upload-label"><i class="fas fa-upload"></i> Pilih Gambar</label><img id="ld_previewEditImg" class="ld-preview-img" src="" alt="Preview"></div><div class="ld-btn-group"><button class="ld-btn-modal ld-btn-cancel" onclick="ld_closeModal('ld_iconModal')">Batal</button><button class="ld-btn-modal ld-btn-save" onclick="ld_saveIconChanges()">Simpan Ikon</button></div></div></div>
     </div>
 
-    <!-- =========================================
-         TOOL 6: REPOTAN (DENGAN IMPORT/EXPORT)
-         ========================================= -->
+    <!-- TOOL 6: REPOTAN -->
     <div id="tool-repotan" class="tool-container">
         <div class="rep-main-wrapper">
-            <h1 style="text-align:center; margin-bottom:25px; font-size:2.2em; color:#FFD700; text-transform:uppercase;"><i class="fas fa-clipboard-list"></i> Generator Laporan</h1>
+            <h1 style="text-align:center;margin-bottom:25px;font-size:2.2em;color:#FFD700;text-transform:uppercase;"><i class="fas fa-clipboard-list"></i> Generator Laporan</h1>
             <div class="rep-content-grid">
                 <div class="rep-input-column">
-                    <div class="rep-form-group">
-                        <label>Info (Nama/Situs)</label>
-                        <input type="text" id="rep_inputInfo" class="rep-form-control" placeholder="CITAWIN" value="CITAWIN">
-                    </div>
-                    <div class="rep-form-group">
-                        <label>Perihal</label>
-                        <input type="text" id="rep_inputPerihal" class="rep-form-control" placeholder="LiveChat Gangguan">
-                    </div>
-                    <div class="rep-form-group">
-                        <label>Keterangan (Ket)</label>
-                        <textarea id="rep_inputKet" class="rep-form-control" placeholder="Detail..."></textarea>
-                    </div>
-                    <div class="rep-form-group">
-                        <label>Lampiran (Link)</label>
-                        <textarea id="rep_inputLampiran" class="rep-form-control" placeholder="https://link1.com&#10;https://link2.com" rows="3"></textarea>
-                    </div>
+                    <div class="rep-form-group"><label>Info (Nama/Situs)</label><input type="text" id="rep_inputInfo" class="rep-form-control" placeholder="CITAWIN" value="CITAWIN"></div>
+                    <div class="rep-form-group"><label>Perihal</label><input type="text" id="rep_inputPerihal" class="rep-form-control" placeholder="LiveChat Gangguan"></div>
+                    <div class="rep-form-group"><label>Keterangan (Ket)</label><textarea id="rep_inputKet" class="rep-form-control" placeholder="Detail..."></textarea></div>
+                    <div class="rep-form-group"><label>Lampiran (Link)</label><textarea id="rep_inputLampiran" class="rep-form-control" placeholder="https://link1.com&#10;https://link2.com" rows="3"></textarea></div>
                     <div class="rep-btn-group">
                         <button class="rep-btn rep-btn-primary" onclick="rep_generateText()"><i class="fas fa-sync-alt"></i> Generate</button>
                         <button class="rep-btn rep-btn-secondary" onclick="rep_copyCurrentText()"><i class="far fa-copy"></i> Copy</button>
@@ -743,81 +659,157 @@
                 </div>
                 <div class="rep-archive-column">
                     <button class="rep-save-btn-main" onclick="rep_saveToHistory()"><i class="fas fa-save"></i> Simpan ke Arsip</button>
-
-                    <!-- TOMBOL EXPORT / IMPORT / HAPUS SEMUA -->
                     <div class="rep-backup-group">
                         <button class="rep-backup-btn rep-btn-export" onclick="rep_exportData()"><i class="fas fa-download"></i> Export</button>
                         <button class="rep-backup-btn rep-btn-import" onclick="document.getElementById('rep_importFile').click()"><i class="fas fa-upload"></i> Import</button>
                         <input type="file" id="rep_importFile" accept=".json" style="display:none" onchange="rep_importData(this)">
                         <button class="rep-backup-btn rep-btn-clear-all" onclick="rep_clearAll()"><i class="fas fa-trash-alt"></i> Hapus</button>
                     </div>
-
-                    <div class="rep-archive-title">
-                        <span><i class="fas fa-database"></i> Data Tersimpan</span>
-                        <span style="font-size: 12px; color: #aaa;" id="rep_countLabel">0 Items</span>
-                    </div>
-                    <div class="rep-archive-list" id="rep_archiveListContainer">
-                        <div class="empty-state">Belum ada laporan.</div>
-                    </div>
+                    <div class="rep-archive-title"><span><i class="fas fa-database"></i> Data Tersimpan</span><span style="font-size:12px;color:#aaa;" id="rep_countLabel">0 Items</span></div>
+                    <div class="rep-archive-list" id="rep_archiveListContainer"><div style="text-align:center;color:#888;padding:30px 0;font-style:italic;">Belum ada laporan.</div></div>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // --- NAVIGATION LOGIC ---
+        // ==========================================
+        // NAVIGATION
+        // ==========================================
         function showTool(toolId) {
-            document.querySelectorAll('.tool-container').forEach(el => { el.classList.remove('active'); el.style.display = 'none'; });
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            const tool = document.getElementById(toolId);
-            if(tool) {
-                if(toolId === 'tool-prediksi') tool.style.display = 'block';
-                else if (toolId === 'tool-jackpot') tool.style.display = 'flex';
-                else if (toolId === 'tool-qris') tool.style.display = 'flex';
-                else if (toolId === 'tool-syair') tool.style.display = 'flex';
-                else if (toolId === 'tool-livedraw') tool.style.display = 'flex'; 
-                else if (toolId === 'tool-repotan') tool.style.display = 'flex';
+            document.querySelectorAll('.tool-container').forEach(function(el) { el.classList.remove('active'); el.style.display = 'none'; });
+            document.querySelectorAll('.nav-btn').forEach(function(btn) { btn.classList.remove('active'); });
+            var tool = document.getElementById(toolId);
+            if (tool) {
+                if (toolId === 'tool-prediksi') tool.style.display = 'block';
+                else tool.style.display = 'flex';
                 tool.classList.add('active');
             }
             event.target.classList.add('active');
-            if(toolId === 'tool-syair') initSyair();
+            if (toolId === 'tool-syair') initSyair();
         }
-        function showNotification(msg) { const n = document.getElementById('notification'); n.innerText = msg; n.style.display = 'block'; setTimeout(() => { n.style.display = 'none'; }, 3000); }
 
-        // =========================================
+        function showNotification(msg) {
+            var n = document.getElementById('notification');
+            n.innerText = msg; n.style.display = 'block';
+            setTimeout(function() { n.style.display = 'none'; }, 3000);
+        }
+
+        // ==========================================
         // TOOL 1: JACKPOT
-        // =========================================
-        document.getElementById('jp_menang').addEventListener('input', function(e) { let v = e.target.value.replace(/[^\d]/g, ''); if(v) e.target.value = v.replace(/\B(?=(\d{3})+(?!\d))/g, '.'); });
-        document.getElementById('jp_gambar').addEventListener('change', function(e) { document.getElementById('jp_fileName').innerHTML = e.target.files[0] ? e.target.files[0].name : 'Pilih file...'; if (e.target.files[0]) { const r = new FileReader(); r.onload = function(ev) { const p = document.getElementById('jp_preview'); p.src = ev.target.result; p.classList.add('show'); document.getElementById('jp_placeholder').style.display = 'none'; }; r.readAsDataURL(e.target.files[0]); } });
-        function generateJackpot() { let u = document.getElementById('jp_userid').value.trim() || 'nanadaime'; let m = document.getElementById('jp_menang').value; let g = document.getElementById('jp_game').value.trim() || 'PG SOFT'; let t = `🥳🎉 SELAMAT! Member CITAWIN JACKPOT! 🎉🥳\n\nUser ID : ${u}\nGame : ${g}\n💰 Rp ${m},-\n\n✅ Withdraw LUNAS & DIBAYAR!\nBukti nyata kemenangan bersama CITAWIN.\n👉 Giliran kamu sekarang!`; document.getElementById('jp_hasil').innerText = t; }
-        function copyJackpot() { let t = document.getElementById('jp_hasil').innerText; navigator.clipboard.writeText(t).then(() => showNotification('✅ Disalin!')); }
+        // ==========================================
+        document.getElementById('jp_menang').addEventListener('input', function(e) {
+            var v = e.target.value.replace(/[^\d]/g, '');
+            if (v) e.target.value = v.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        });
+        document.getElementById('jp_gambar').addEventListener('change', function(e) {
+            document.getElementById('jp_fileName').innerHTML = e.target.files[0] ? e.target.files[0].name : 'Pilih file...';
+            if (e.target.files[0]) {
+                var r = new FileReader();
+                r.onload = function(ev) { document.getElementById('jp_preview').src = ev.target.result; document.getElementById('jp_preview').classList.add('show'); document.getElementById('jp_placeholder').style.display = 'none'; };
+                r.readAsDataURL(e.target.files[0]);
+            }
+        });
+        function generateJackpot() {
+            var u = document.getElementById('jp_userid').value.trim() || 'nanadaime';
+            var m = document.getElementById('jp_menang').value;
+            var g = document.getElementById('jp_game').value.trim() || 'PG SOFT';
+            document.getElementById('jp_hasil').innerText = '🥳🎉 SELAMAT! Member CITAWIN JACKPOT! 🎉🥳\n\nUser ID : ' + u + '\nGame : ' + g + '\n💰 Rp ' + m + ',-\n\n✅ Withdraw LUNAS & DIBAYAR!\nBukti nyata kemenangan bersama CITAWIN.\n👉 Giliran kamu sekarang!';
+        }
+        function copyJackpot() { navigator.clipboard.writeText(document.getElementById('jp_hasil').innerText).then(function() { showNotification('✅ Disalin!'); }); }
 
-        // =========================================
+        // ==========================================
         // TOOL 2: QRIS
-        // =========================================
-        function hitungQris() { let t = document.getElementById("qris_data").value; let r = t.split("\n"); let a = 0, f = 0; r.forEach(row => { let c = row.split("\t"); a += parseFloat(c[2])||0; f += parseFloat(c[3])||0; }); document.getElementById("qris_amount").innerText = a.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); document.getElementById("qris_fee").innerText = f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
-        function createMoney() { const t = document.getElementById('tool-qris'); if (!t.classList.contains('active')) return; const o = t.querySelector('.overlay'); if(!o) return; let m = document.createElement('div'); m.classList.add('money'); m.style.left = Math.random() * 100 + '%'; m.style.animationDuration = (2 + Math.random() * 3) + 's'; m.innerText = '💵'; o.appendChild(m); setTimeout(() => { m.remove(); }, 5000); }
+        // ==========================================
+        function hitungQris() {
+            var r = document.getElementById('qris_data').value.split('\n'), a = 0, f = 0;
+            r.forEach(function(row) { var c = row.split('\t'); a += parseFloat(c[2]) || 0; f += parseFloat(c[3]) || 0; });
+            document.getElementById('qris_amount').innerText = a.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            document.getElementById('qris_fee').innerText = f.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+        function createMoney() {
+            var t = document.getElementById('tool-qris');
+            if (!t.classList.contains('active')) return;
+            var o = t.querySelector('.overlay'); if (!o) return;
+            var m = document.createElement('div'); m.classList.add('money');
+            m.style.left = Math.random() * 100 + '%'; m.style.animationDuration = (2 + Math.random() * 3) + 's';
+            m.innerText = '💵'; o.appendChild(m); setTimeout(function() { m.remove(); }, 5000);
+        }
         setInterval(createMoney, 500);
 
-        // =========================================
+        // ==========================================
         // TOOL 3: PREDIKSI
-        // =========================================
-        function initPrediksi() { const t = new Date(); const tm = new Date(t); tm.setDate(t.getDate() + 1); const d = t.toLocaleDateString('id-ID', { day: 'numeric', month: 'long' }) + ' - ' + tm.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }); document.getElementById('pred_dateDisplay').innerText = d; document.getElementById('pred_previewDate').innerText = d; document.getElementById('pred_inputText').addEventListener('input', generatePrediksiHTML); }
-        function generatePrediksiHTML() { const i = document.getElementById('pred_inputText').value.trim(); if (!i) return; const l = i.split('\n').filter(ln => ln.trim() !== ''); let tr = '', pr = '', cl = '', mt = [], tl = 0, tmc = 0; for (let x = 0; x < l.length; x++) { let ln = l[x].trim(); const md = parseMatchLine(ln); if (!md) { if (cl && mt.length > 0) { tr += genTbl(cl, mt); pr += genPrev(cl, mt); tl++; tmc += mt.length; } cl = ln; mt = []; } else mt.push(md); } if (cl && mt.length > 0) { tr += genTbl(cl, mt); pr += genPrev(cl, mt); tl++; tmc += mt.length; } document.getElementById('pred_totalLeagues').textContent = tl; document.getElementById('pred_totalMatches').textContent = tmc; document.getElementById('pred_outputCode').textContent = genFull(tr); document.getElementById('pred_previewContent').innerHTML = pr || '<div style="color:#fff; text-align:center;">Format salah</div>'; }
-        function parseMatchLine(l) { const h = /\d{1,2}[\/\-]\d{1,2}|\d{1,2}:\d{2}/.test(l); const s = /\s+(vs|VS|Vs|vS)\s+/i.test(l); const sc = /\d+\s*[:]\s*\d+/.test(l); if (!h && !s && !sc) return null; let d = '', t = '', t1 = '', t2 = '', s1 = '', s2 = ''; const dtm = l.match(/(\d{1,2}[\/\-]\d{1,2})\s+(\d{1,2}:\d{2}(?:\s+WIB)?)/); if (dtm) { d = dtm[1]; t = dtm[2]; l = l.replace(dtm[0], '').trim(); } const scm = l.match(/(\d+)\s*[:]\s*(\d+)\s*$/); if (scm) { s1 = scm[1]; s2 = scm[2]; l = l.replace(scm[0], '').trim(); } const tmch = l.match(/(.+?)\s+(vs|VS|Vs|vS)\s+(.+?)$/i); if (tmch) { t1 = tmch[1].trim(); t2 = tmch[3].trim(); } if (t1 && t2 && s1 !== '' && s2 !== '') return { date: d || '-', time: t || '-', team1: t1, team2: t2, score1: s1, score2: s2 }; return null; }
-        function genTbl(l, m) { let h = `<div style="border:3px solid #f5c542;border-radius:15px;padding:5px;margin:20px auto;width:90%;background:rgba(0,0,0,0.5);box-shadow:0 0 20px #f5c54280;"><table style="width:100%;border-collapse:collapse;"><tbody><tr><th colspan="3" style="background:linear-gradient(135deg,#000,#f5c542);color:#fff;padding:15px;text-transform:uppercase;">🏆 ${l}</th></tr><tr><th style="width:20%;background:#f5c542;color:#000;padding:10px;">Waktu</th><th style="width:60%;background:#f5c542;color:#000;padding:10px;">Pertandingan</th><th style="width:20%;background:#f5c542;color:#000;padding:10px;">Skor</th></tr>`; m.forEach(x => { h += `<tr style="background:#1a1a1a;color:#fff;"><td style="padding:10px;">${x.date}<br>${x.time}</td><td style="padding:10px;">${x.team1} VS ${x.team2}</td><td style="padding:10px;font-weight:bold;color:#f5c542;">${x.score1} : ${x.score2}</td></tr>`; }); h += `</tbody></table></div>`; return h; }
-        function genPrev(l, m) { let h = `<div style="border:2px solid #f5c542;border-radius:10px;margin-top:15px;overflow:hidden;"><div style="background:#f5c542;color:#000;padding:10px;font-weight:bold;text-align:center;">🏆 ${l}</div><table style="width:100%;border-collapse:collapse;font-size:12px;"><tr style="background:#333;color:#fff;"><th style="padding:8px;">Waktu</th><th style="padding:8px;">Match</th><th style="padding:8px;">Skor</th></tr>`; m.forEach(x => { h += `<tr style="background:#000;color:#fff;border-bottom:1px solid #333;"><td style="padding:8px;">${x.date}<br>${x.time}</td><td style="padding:8px;">${x.team1} VS ${x.team2}</td><td style="padding:8px;color:#f5c542;">${x.score1} : ${x.score2}</td></tr>`; }); h += `</table></div>`; return h; }
-        function genFull(tr) { const d = document.getElementById('pred_dateDisplay').innerText; return `<!-- CODE --><div style="font-family:sans-serif;background:#000;color:#fff;padding:20px;"><div style="text-align:center;margin-bottom:20px;"><img src="https://cdn.areabermain.club/assets/cdn/az9/2026/01/17/20260117/4132469f1730fbb6a0af7e00374e2b86/logo-new-citawin.png" style="max-width:200px;"><h2 style="color:#f5c542;margin-top:10px;">${d}</h2></div>${tr}</div>`; }
+        // ==========================================
+        function initPrediksi() {
+            var t = new Date(), tm = new Date(t); tm.setDate(t.getDate() + 1);
+            var d = t.toLocaleDateString('id-ID', { day: 'numeric', month: 'long' }) + ' - ' + tm.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+            document.getElementById('pred_dateDisplay').innerText = d;
+            document.getElementById('pred_previewDate').innerText = d;
+            document.getElementById('pred_inputText').addEventListener('input', generatePrediksiHTML);
+        }
+        function generatePrediksiHTML() {
+            var i = document.getElementById('pred_inputText').value.trim(); if (!i) return;
+            var l = i.split('\n').filter(function(ln) { return ln.trim() !== ''; });
+            var tr = '', pr = '', cl = '', mt = [], tl = 0, tmc = 0;
+            for (var x = 0; x < l.length; x++) {
+                var ln = l[x].trim(), md = parseMatchLine(ln);
+                if (!md) { if (cl && mt.length > 0) { tr += genTbl(cl, mt); pr += genPrev(cl, mt); tl++; tmc += mt.length; } cl = ln; mt = []; }
+                else mt.push(md);
+            }
+            if (cl && mt.length > 0) { tr += genTbl(cl, mt); pr += genPrev(cl, mt); tl++; tmc += mt.length; }
+            document.getElementById('pred_totalLeagues').textContent = tl;
+            document.getElementById('pred_totalMatches').textContent = tmc;
+            document.getElementById('pred_outputCode').textContent = genFull(tr);
+            document.getElementById('pred_previewContent').innerHTML = pr || '<div style="color:#fff;text-align:center;">Format salah</div>';
+        }
+        function parseMatchLine(l) {
+            var h = /\d{1,2}[\/\-]\d{1,2}|\d{1,2}:\d{2}/.test(l), s = /\s+(vs|VS|Vs|vS)\s+/i.test(l), sc = /\d+\s*[:]\s*\d+/.test(l);
+            if (!h && !s && !sc) return null;
+            var d = '', t = '', t1 = '', t2 = '', s1 = '', s2 = '';
+            var dtm = l.match(/(\d{1,2}[\/\-]\d{1,2})\s+(\d{1,2}:\d{2}(?:\s+WIB)?)/);
+            if (dtm) { d = dtm[1]; t = dtm[2]; l = l.replace(dtm[0], '').trim(); }
+            var scm = l.match(/(\d+)\s*[:]\s*(\d+)\s*$/);
+            if (scm) { s1 = scm[1]; s2 = scm[2]; l = l.replace(scm[0], '').trim(); }
+            var tmch = l.match(/(.+?)\s+(vs|VS|Vs|vS)\s+(.+?)$/i);
+            if (tmch) { t1 = tmch[1].trim(); t2 = tmch[3].trim(); }
+            if (t1 && t2 && s1 !== '' && s2 !== '') return { date: d || '-', time: t || '-', team1: t1, team2: t2, score1: s1, score2: s2 };
+            return null;
+        }
+        function genTbl(lg, m) {
+            var h = '<div style="border:3px solid #f5c542;border-radius:15px;padding:5px;margin:20px auto;width:90%;background:rgba(0,0,0,0.5);box-shadow:0 0 20px #f5c54280;"><table style="width:100%;border-collapse:collapse;"><tbody><tr><th colspan="3" style="background:linear-gradient(135deg,#000,#f5c542);color:#fff;padding:15px;text-transform:uppercase;">🏆 ' + lg + '</th></tr><tr><th style="width:20%;background:#f5c542;color:#000;padding:10px;">Waktu</th><th style="width:60%;background:#f5c542;color:#000;padding:10px;">Pertandingan</th><th style="width:20%;background:#f5c542;color:#000;padding:10px;">Skor</th></tr>';
+            m.forEach(function(x) { h += '<tr style="background:#1a1a1a;color:#fff;"><td style="padding:10px;">' + x.date + '<br>' + x.time + '</td><td style="padding:10px;">' + x.team1 + ' VS ' + x.team2 + '</td><td style="padding:10px;font-weight:bold;color:#f5c542;">' + x.score1 + ' : ' + x.score2 + '</td></tr>'; });
+            return h + '</tbody></table></div>';
+        }
+        function genPrev(lg, m) {
+            var h = '<div style="border:2px solid #f5c542;border-radius:10px;margin-top:15px;overflow:hidden;"><div style="background:#f5c542;color:#000;padding:10px;font-weight:bold;text-align:center;">🏆 ' + lg + '</div><table style="width:100%;border-collapse:collapse;font-size:12px;"><tr style="background:#333;color:#fff;"><th style="padding:8px;">Waktu</th><th style="padding:8px;">Match</th><th style="padding:8px;">Skor</th></tr>';
+            m.forEach(function(x) { h += '<tr style="background:#000;color:#fff;border-bottom:1px solid #333;"><td style="padding:8px;">' + x.date + '<br>' + x.time + '</td><td style="padding:8px;">' + x.team1 + ' VS ' + x.team2 + '</td><td style="padding:8px;color:#f5c542;">' + x.score1 + ' : ' + x.score2 + '</td></tr>'; });
+            return h + '</table></div>';
+        }
+        function genFull(tr) { var d = document.getElementById('pred_dateDisplay').innerText; return '<!-- CODE --><div style="font-family:sans-serif;background:#000;color:#fff;padding:20px;"><div style="text-align:center;margin-bottom:20px;"><img src="https://cdn.areabermain.club/assets/cdn/az9/2026/01/17/20260117/4132469f1730fbb6a0af7e00374e2b86/logo-new-citawin.png" style="max-width:200px;"><h2 style="color:#f5c542;margin-top:10px;">' + d + '</h2></div>' + tr + '</div>'; }
         function clearPrediksi() { document.getElementById('pred_inputText').value = ''; document.getElementById('pred_outputCode').textContent = ''; document.getElementById('pred_previewContent').innerHTML = ''; showNotification('Clear'); }
-        function copyPrediksi() { navigator.clipboard.writeText(document.getElementById('pred_outputCode').textContent).then(() => showNotification('HTML Disalin!')); }
+        function copyPrediksi() { navigator.clipboard.writeText(document.getElementById('pred_outputCode').textContent).then(function() { showNotification('HTML Disalin!'); }); }
 
-        // =========================================
-        // TOOL 4: SYAIR (BERSIH)
-        // =========================================
-        let sInt; 
-        const sd = [{n:'ULAR',u:'https://i.imgur.com/xvEIxOe.png',a:["02","14","26","38","50","62","74","86","98"]},{n:'NAGA',u:'https://i.imgur.com/E5gxRuY.png',a:["03","15","27","39","51","63","75","87","99"]},{n:'KELINCI',u:'https://i.imgur.com/VPwhArL.png',a:["04","16","28","40","52","64","76","88","00"]},{n:'HARIMAU',u:'https://i.imgur.com/LFmqEIL.png',a:["05","17","29","41","53","65","77","89"]},{n:'KERBAU',u:'https://i.postimg.cc/SxPTQGcw/17deabf0d02c1a1ef05e0d92fc47b53b-Photoroom.png',a:["06","18","30","42","54","66","78","90"]},{n:'TIKUS',u:'https://i.postimg.cc/VLLDjhRh/572ef90cf873cf0bae134fb10b9e9ce6-Photoroom.png',a:["07","19","31","43","55","67","79","91"]},{n:'BABI',u:'https://i.postimg.cc/0Q0bncnq/988651d0fb546b5ed57fa5813fce79de-Photoroom.png',a:["08","20","32","44","56","68","80","92"]},{n:'ANJING',u:'https://i.postimg.cc/DZ6wLmfK/26edd62a40024a37605788aa04330308-Photoroom.png',a:["09","21","33","45","57","69","81","93"]},{n:'AYAM',u:'https://i.postimg.cc/BvcSftKP/ebe301829765054ef33f8416cf6e1685-Photoroom.png',a:["10","22","34","46","58","70","82","94"]},{n:'MONYET',u:'https://i.postimg.cc/vmHYMbLK/c2364d161855434c28e5015e412ac631-Photoroom.png',a:["11","23","35","47","59","71","83","95"]},{n:'KAMBING',u:'https://i.postimg.cc/tJhQWMNW/25cba09984349edc203468f9d062bb77-Photoroom.png',a:["12","24","36","48","60","72","84","96"]},{n:'KUDA',u:'https://i.postimg.cc/MKDgwRs5/49858cc15abf0f6cb87d5acf1df06753-Photoroom.png',a:["01","13","25","37","49","61","73","85","97"]}];
+        // ==========================================
+        // TOOL 4: SYAIR — PASARAN BERGANTIAN
+        // ==========================================
+        var sInt = null;
+        var pasaranInt = null;
+        var sd = [
+            {n:'ULAR',u:'https://i.imgur.com/xvEIxOe.png',a:["02","14","26","38","50","62","74","86","98"]},
+            {n:'NAGA',u:'https://i.imgur.com/E5gxRuY.png',a:["03","15","27","39","51","63","75","87","99"]},
+            {n:'KELINCI',u:'https://i.imgur.com/VPwhArL.png',a:["04","16","28","40","52","64","76","88","00"]},
+            {n:'HARIMAU',u:'https://i.imgur.com/LFmqEIL.png',a:["05","17","29","41","53","65","77","89"]},
+            {n:'KERBAU',u:'https://i.postimg.cc/SxPTQGcw/17deabf0d02c1a1ef05e0d92fc47b53b-Photoroom.png',a:["06","18","30","42","54","66","78","90"]},
+            {n:'TIKUS',u:'https://i.postimg.cc/VLLDjhRh/572ef90cf873cf0bae134fb10b9e9ce6-Photoroom.png',a:["07","19","31","43","55","67","79","91"]},
+            {n:'BABI',u:'https://i.postimg.cc/0Q0bncnq/988651d0fb546b5ed57fa5813fce79de-Photoroom.png',a:["08","20","32","44","56","68","80","92"]},
+            {n:'ANJING',u:'https://i.postimg.cc/DZ6wLmfK/26edd62a40024a37605788aa04330308-Photoroom.png',a:["09","21","33","45","57","69","81","93"]},
+            {n:'AYAM',u:'https://i.postimg.cc/BvcSftKP/ebe301829765054ef33f8416cf6e1685-Photoroom.png',a:["10","22","34","46","58","70","82","94"]},
+            {n:'MONYET',u:'https://i.postimg.cc/vmHYMbLK/c2364d161855434c28e5015e412ac631-Photoroom.png',a:["11","23","35","47","59","71","83","95"]},
+            {n:'KAMBING',u:'https://i.postimg.cc/tJhQWMNW/25cba09984349edc203468f9d062bb77-Photoroom.png',a:["12","24","36","48","60","72","84","96"]},
+            {n:'KUDA',u:'https://i.postimg.cc/MKDgwRs5/49858cc15abf0f6cb87d5acf1df06753-Photoroom.png',a:["01","13","25","37","49","61","73","85","97"]}
+        ];
 
-        const pantunList = [
+        var pantunList = [
             "Pergi ke pasar membeli mangga,<br>Pulang ke rumah makan dengan gembira.<br>Jackpot besar sudah di tangan kita,<br>Hidup bahagia tiada duanya.",
             "Burung merpati terbang ke angkasa,<br>Hinggap di dahan pohon jati.<br>Rezeki nomplok tiada terkira,<br>Bermain di sini untung pasti.",
             "Jalan-jalan ke kota Medan,<br>Membeli oleh-oleh kue bika.<br>Jackpot menanti di tangan anda,<br>Raih kemenangan di Citawin pasti.",
@@ -830,206 +822,151 @@
             "Buah durian berduri-duri,<br>Diambil isinya manis rasanya.<br>Jika kalian ingin menang terus,<br>Mainkan permainan ini dengan yakin."
         ];
 
-        function initSyair() { 
-            const t = new Date(); 
-            document.getElementById('syair_currentDate').innerText = t.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }); 
-            document.getElementById('syair_locationsList').innerHTML = `<span>${['POIPET','NEVADA','BRUNEI'][Math.floor(Math.random()*3)]}</span>`; 
-            if(sInt) clearInterval(sInt); 
-            sInt = setInterval(randS, 1000); 
-            randShio();
-            // Tampilkan pantun random sekali saja (tanpa tombol ganti)
-            const randomIndex = Math.floor(Math.random() * pantunList.length);
-            document.getElementById('syair_pantunDisplay').innerHTML = pantunList[randomIndex];
-        }
-
-        let cS = null, aI = 0;
-        function randShio() { 
-            const s = sd[Math.floor(Math.random() * sd.length)]; 
-            cS = s; aI = 0; 
-            document.getElementById("syair_shioName").innerText = s.n;
-            document.getElementById("syair_shioImage").style.backgroundImage = `url(${s.u})`; 
-            document.getElementById("syair_shioAngkaTengah").innerText = s.a[0]; 
-        }
-        function randS() { if (cS) { aI = (aI + 1) % cS.a.length; document.getElementById("syair_shioAngkaTengah").innerText = cS.a[aI]; } document.getElementById("syair_numTop").innerText = Math.floor(Math.random()*10); document.getElementById("syair_numBottom").innerText = Math.floor(Math.random()*10); document.getElementById("syair_numLeft").innerText = Math.floor(Math.random()*10); document.getElementById("syair_numRight").innerText = Math.floor(Math.random()*10); let n = ''; for(let i=0; i<7; i++) n += Math.floor(Math.random()*10); document.getElementById('syair_bbfsNumbers').innerText = n; document.getElementById('syair_bebasNumbers').innerText = `${Math.floor(Math.random()*10)}/${Math.floor(Math.random()*10)}`; }
-        function updateSyairContent() { const u = document.getElementById('syair_inputShioUrl').value; const l = document.getElementById('syair_inputLinkUrl').value; if (u) { document.getElementById('syair_shioImage').style.backgroundImage = `url('${u}')`; document.getElementById('syair_shioName').innerText = "KUSTOM"; } if (l) { document.getElementById('syair_targetLink').innerText = l; document.getElementById('syair_targetLink').href = l; } showNotification('Update!'); }
-
-        // =========================================
-        // TOOL 5: LIVE DRAW
-        // =========================================
-        const LD_STORAGE_KEY = 'citawin_ld_v5_backup';
-        const ld_defaultMarkets = [
-            {id: 1, name: 'HOKIDRAW', url: 'https://hokidraw.com/live-draw.html', icon: '🎰', type: 'emoji'},
-            {id: 2, name: 'CHELSEA', url: 'https://chelseapools.co.uk/draw-result.html', icon: '⚽', type: 'emoji'},
-            {id: 3, name: 'POIPET', url: 'https://poipetlottery.com/liveresult', icon: '🎲', type: 'emoji'},
-            {id: 4, name: 'BANGKOK', url: 'https://bangkokpoolstoday.com/drawResult.html', icon: '🏙️', type: 'emoji'},
-            {id: 5, name: 'TOTOCAMBODIA', url: 'https://totocambodialive.com/live-draw.html', icon: '🦁', type: 'emoji'},
+        // 49 PASARAN
+        var syairPasaranList = [
+            "TOTOMALI2030","TOTOMALI2330","TOTOMALI1530",
+            "HUAHIN2100","HUAHIN0100","HUAHIN1630",
+            "CHELSEA21","CHELSEA11","CHELSEA15","CHELSEA19",
+            "HOKI DRAW","NEVADA",
+            "BRUNEI21","BRUNEI02","BRUNEI14",
+            "TOTO MACAU PAGI","TOTO MACAU SIANG","TOTO MACAU SORE",
+            "TOTO MACAU MALAM 1","TOTO MACAU MALAM 2","TOTO MACAU MALAM 3",
+            "POIPET22","POIPET12","POIPET15","POIPET19",
+            "HONGKONG LOTTO",
+            "KING KONG4D SORE","KING KONG4D MALAM",
+            "KENTUCKY MIDDAY","KENTUCKY EVENING",
+            "FLORIDA MIDDAY","FLORIDA EVENING",
+            "NEW YORK MIDDAY","NEW YORK EVENING",
+            "BANGKOK 0130","BANGKOK 0930",
+            "NORTH CAROLINA DAY","CAROLINA EVENING",
+            "OREGON 03","OREGON 06","OREGON 09","OREGON 12",
+            "CALIFORNIA",
+            "Toto Cambodia Live","BULLSEYE",
+            "SYDNEY LOTTO","SINGAPORE","MAGNUM4D","PCSO"
         ];
-        let ld_markets = [];
-        let ld_activeMarket = null;
-        let ld_selectedIcon = null;
-        let ld_tempImage = null; 
-        let ld_iconTargetId = null;
-        let ld_sidebarVisible = true;
-        const ld_emojis = ['🎰','🎲','🎯','⚽','🏀','🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼','🐨','🐯','🦁','🐮','🐷','🐸','🐙','🦑','🦈','🐬','🐳','🌻','🌸','🌺','🍀','🍁','🍂','🍄','🌈','⭐','🌟','✨','💫','🌙','☀️','🔥','💧','💎','💍','👑','🎩','🧢'];
 
-        (function ld_initLoad() {
-            try {
-                const saved = localStorage.getItem(LD_STORAGE_KEY);
-                if (saved) { ld_markets = JSON.parse(saved); }
-                else { ld_markets = [...ld_defaultMarkets]; localStorage.setItem(LD_STORAGE_KEY, JSON.stringify(ld_markets)); }
-            } catch (e) { console.error("Error loading LD data", e); ld_markets = [...ld_defaultMarkets]; }
-        })();
+        var cS = null, aI = 0, pasaranIdx = 0;
 
-        function ld_saveData() { try { localStorage.setItem(LD_STORAGE_KEY, JSON.stringify(ld_markets)); } catch(e) { alert("Gagal menyimpan!"); console.error(e); } }
-        function ld_exportData() { const dataStr = JSON.stringify(ld_markets, null, 2); const blob = new Blob([dataStr], { type: "application/json" }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = "backup_pasaran_citawin.json"; document.body.appendChild(a); a.click(); document.body.removeChild(a); showNotification("Data berhasil di-export!"); }
-        function ld_importData(input) { if (input.files && input.files[0]) { const file = input.files[0]; const reader = new FileReader(); reader.onload = function(e) { try { const imported = JSON.parse(e.target.result); if (Array.isArray(imported)) { ld_markets = imported; ld_saveData(); ld_renderList(); showNotification("Data berhasil di-import!"); } else { alert("Format file salah!"); } } catch (err) { alert("Gagal membaca file."); } }; reader.readAsText(file); } }
-        function ld_renderList() { const list = document.getElementById('ld_marketList'); list.innerHTML = ''; ld_markets.forEach(m => { const div = document.createElement('div'); div.className = 'market-item-ld' + (ld_activeMarket === m.id ? ' active-ld' : ''); let iconHtml = ''; if(m.type === 'image') { iconHtml = `<img src="${m.icon}" alt="${m.name}">`; } else { iconHtml = m.icon; } div.innerHTML = `<button class="market-btn-ld" onclick="ld_selectMarket(${m.id})"><div class="m-icon-ld">${iconHtml}</div><div class="m-name-ld">${m.name}</div></button><div class="m-actions-ld"><button class="m-btn-small-ld btn-upload-ld" onclick="ld_openIconModal(${m.id})"><i class="fas fa-image"></i></button><button class="m-btn-small-ld btn-delete-ld" onclick="ld_deleteMarket(${m.id})"><i class="fas fa-times"></i></button></div>`; list.appendChild(div); }); }
-        function ld_selectMarket(id) { ld_activeMarket = id; const m = ld_markets.find(x => x.id === id); document.getElementById('ld_displayMarket').innerText = m.name; document.getElementById('ld_displayUrlSmall').innerText = m.url.substring(0, 30) + '...'; document.getElementById('ld_liveFrame').src = m.url; document.getElementById('ld_loading').classList.remove('hidden-ld'); ld_renderList(); }
-        function ld_refreshLive() { if(ld_activeMarket) { document.getElementById('ld_liveFrame').src = document.getElementById('ld_liveFrame').src; document.getElementById('ld_loading').classList.remove('hidden-ld'); } else { alert('Pilih pasaran dulu!'); } }
-        document.getElementById('ld_liveFrame').onload = () => document.getElementById('ld_loading').classList.add('hidden-ld');
-        function ld_toggleSidebar() { const sb = document.getElementById('ld_sidebar'); if(ld_sidebarVisible) sb.classList.add('sidebar-hidden-ld'); else sb.classList.remove('sidebar-hidden-ld'); ld_sidebarVisible = !ld_sidebarVisible; }
-        function ld_openModal(id) { document.getElementById(id).style.display = 'flex'; ld_tempImage = null; document.getElementById('ld_previewAddImg').style.display = 'none'; document.getElementById('ld_previewEditImg').style.display = 'none'; }
-        function ld_closeModal(id) { document.getElementById(id).style.display = 'none'; ld_selectedIcon = null; document.getElementById('ld_fileInputAdd').value = ''; document.getElementById('ld_fileInputEdit').value = ''; document.querySelectorAll('.ld-emoji-item.selected-ld').forEach(e => e.classList.remove('selected-ld')); }
-        function ld_generateEmojiGrids() { const gridAdd = document.getElementById('ld_emojiGridAdd'); const gridEdit = document.getElementById('ld_emojiGridEdit'); const html = ld_emojis.map(e => `<div class="ld-emoji-item" onclick="ld_pickEmoji(this, '${e}')">${e}</div>`).join(''); gridAdd.innerHTML = html; gridEdit.innerHTML = html; }
-        function ld_pickEmoji(el, emoji) { const parent = el.parentElement; parent.querySelectorAll('.ld-emoji-item').forEach(i => i.classList.remove('selected-ld')); el.classList.add('selected-ld'); ld_selectedIcon = emoji; ld_tempImage = null; const previewAdd = document.getElementById('ld_previewAddImg'); const previewEdit = document.getElementById('ld_previewEditImg'); if(previewAdd) previewAdd.style.display = 'none'; if(previewEdit) previewEdit.style.display = 'none'; }
-        function ld_previewAddImage(input) { if (input.files && input.files[0]) { const reader = new FileReader(); reader.onload = function(e) { const img = document.getElementById('ld_previewAddImg'); img.src = e.target.result; img.style.display = 'block'; ld_tempImage = e.target.result; document.querySelectorAll('#ld_emojiGridAdd .ld-emoji-item.selected-ld').forEach(i => i.classList.remove('selected-ld')); ld_selectedIcon = null; }; reader.readAsDataURL(input.files[0]); } }
-        function ld_previewEditImage(input) { if (input.files && input.files[0]) { const reader = new FileReader(); reader.onload = function(e) { const img = document.getElementById('ld_previewEditImg'); img.src = e.target.result; img.style.display = 'block'; ld_tempImage = e.target.result; document.querySelectorAll('#ld_emojiGridEdit .ld-emoji-item.selected-ld').forEach(i => i.classList.remove('selected-ld')); ld_selectedIcon = null; }; reader.readAsDataURL(input.files[0]); } }
-        function ld_saveNewMarket() { const nama = document.getElementById('ld_inputNama').value.trim().toUpperCase(); const link = document.getElementById('ld_inputLink').value.trim(); if(!nama || !link) { alert('Isi Nama dan Link!'); return; } if(!ld_selectedIcon && !ld_tempImage) { alert('Pilih ikon Emoji atau Upload Gambar!'); return; } const newMarket = { id: Date.now(), name: nama, url: link, icon: ld_tempImage ? ld_tempImage : ld_selectedIcon, type: ld_tempImage ? 'image' : 'emoji' }; ld_markets.push(newMarket); ld_saveData(); ld_renderList(); ld_closeModal('ld_addModal'); document.getElementById('ld_inputNama').value = ''; document.getElementById('ld_inputLink').value = ''; }
-        function ld_deleteMarket(id) { if(confirm('Hapus pasaran ini?')) { ld_markets = ld_markets.filter(m => m.id !== id); if(ld_activeMarket === id) { ld_activeMarket = null; document.getElementById('ld_liveFrame').src = ''; document.getElementById('ld_displayMarket').innerText = 'Pilih Pasaran'; } ld_saveData(); ld_renderList(); } }
-        function ld_openIconModal(id) { ld_iconTargetId = id; ld_openModal('ld_iconModal'); }
-        function ld_saveIconChanges() { if(!ld_selectedIcon && !ld_tempImage) { alert('Pilih ikon baru atau upload gambar!'); return; } const m = ld_markets.find(x => x.id === ld_iconTargetId); if(ld_tempImage) { m.icon = ld_tempImage; m.type = 'image'; } else { m.icon = ld_selectedIcon; m.type = 'emoji'; } ld_saveData(); ld_renderList(); ld_closeModal('ld_iconModal'); }
-        function ld_saveEditLink() { if(!ld_activeMarket) { alert('Tidak ada pasaran aktif!'); return; } const newLink = document.getElementById('ld_editLinkInput').value.trim(); if(!newLink) return; const m = ld_markets.find(x => x.id === ld_activeMarket); m.url = newLink; ld_saveData(); document.getElementById('ld_liveFrame').src = newLink; document.getElementById('ld_loading').classList.remove('hidden-ld'); document.getElementById('ld_displayUrlSmall').innerText = newLink.substring(0, 30) + '...'; ld_closeModal('ld_editModal'); }
-
-        // =========================================
-        // TOOL 6: REPOTAN (DENGAN IMPORT/EXPORT)
-        // =========================================
-        const REP_STORAGE_KEY = 'laporanCitawin';
-        let rep_cur = "";
-
-        function rep_gen() {
-            const i = document.getElementById('rep_inputInfo').value.trim() || '-';
-            const p = document.getElementById('rep_inputPerihal').value.trim() || '-';
-            const k = document.getElementById('rep_inputKet').value.trim() || '-';
-            const lr = document.getElementById('rep_inputLampiran').value.trim();
-            let lf = "-";
-            if (lr) { const ls = lr.split('\n').filter(l => l.trim() !== ''); if (ls.length > 0) lf = ls.map(l => `- ${l.trim()}`).join('\n'); }
-            rep_cur = `Info : ${i}\nPerihal : ${p}\n\nKet : \n ${k}\n\nLampiran : \n ${lf}`;
-            document.getElementById('rep_generatedTextHolder').value = rep_cur;
-            document.getElementById('rep_livePreviewBox').innerText = rep_cur;
-            rep_copy(false);
-        }
-        function rep_copy(show = true) { if (!rep_cur) return; navigator.clipboard.writeText(rep_cur).then(() => { if(show) showNotification("✅ Disalin!"); }).catch(() => { const t = document.getElementById('rep_generatedTextHolder'); t.style.display = 'block'; t.select(); document.execCommand('copy'); t.style.display = 'none'; if(show) showNotification("✅ Disalin!"); }); }
-        function rep_curTxt() { if (!rep_cur) { showNotification("Generate dulu!"); return; } rep_copy(true); }
-        function rep_save() {
-            if (!rep_cur) { showNotification("Generate dulu!"); return; }
-            const now = new Date(); const id = now.getTime();
-            const d = { id: id, ts: now.toLocaleString('id-ID'), cnt: rep_cur, per: document.getElementById('rep_inputPerihal').value.trim() || 'No Subject' };
-            let h = JSON.parse(localStorage.getItem(REP_STORAGE_KEY)) || [];
-            h.unshift(d);
-            localStorage.setItem(REP_STORAGE_KEY, JSON.stringify(h));
-            rep_load();
-            showNotification("✅ Disimpan ke arsip!");
-        }
-        function rep_load() {
-            const c = document.getElementById('rep_archiveListContainer');
-            const h = JSON.parse(localStorage.getItem(REP_STORAGE_KEY)) || [];
-            document.getElementById('rep_countLabel').textContent = `${h.length} Items`;
-            if (h.length === 0) { c.innerHTML = '<div style="text-align:center; color:#888; padding:30px 0; font-style:italic;">Belum ada laporan tersimpan.</div>'; return; }
-            c.innerHTML = '';
-            h.forEach(it => {
-                const d = document.createElement('div');
-                d.className = 'rep-archive-item';
-                const safeCnt = it.cnt.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                d.innerHTML = `<div class="rep-item-header"><span class="rep-item-title">${it.per}</span><span class="rep-item-time">${it.ts}</span></div><div class="rep-item-content">${safeCnt}</div><div class="rep-item-actions"><button class="rep-btn-xs rep-btn-copy-xs" onclick="rep_copyArc('${it.id}')"><i class="far fa-copy"></i> Copy</button><button class="rep-btn-xs rep-btn-delete-xs" onclick="rep_del('${it.id}')"><i class="fas fa-trash"></i> Hapus</button></div>`;
-                c.appendChild(d);
+        function initSyair() {
+            document.getElementById('syair_currentDate').innerText = new Date().toLocaleDateString('id-ID', {
+                weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
             });
-        }
-        function rep_copyArc(id) { const h = JSON.parse(localStorage.getItem(REP_STORAGE_KEY)) || []; const it = h.find(x => x.id == id); if (it) { rep_cur = it.cnt; rep_copy(true); } }
-        function rep_del(id) { if(confirm("Hapus item ini?")) { let h = JSON.parse(localStorage.getItem(REP_STORAGE_KEY)) || []; h = h.filter(x => x.id != id); localStorage.setItem(REP_STORAGE_KEY, JSON.stringify(h)); rep_load(); showNotification("Dihapus!"); } }
 
-        // --- EXPORT DATA REPOTAN ---
-        function rep_exportData() {
-            const h = JSON.parse(localStorage.getItem(REP_STORAGE_KEY)) || [];
-            if (h.length === 0) { showNotification("Tidak ada data untuk di-export!"); return; }
-            const dataStr = JSON.stringify(h, null, 2);
-            const blob = new Blob([dataStr], { type: "application/json" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            // Nama file include tanggal
-            const tanggal = new Date().toLocaleDateString('id-ID').replace(/\//g, '-');
-            a.download = `backup_laporan_citawin_${tanggal}.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showNotification(`✅ ${h.length} data berhasil di-export!`);
+            randShio();
+
+            document.getElementById('syair_pantunDisplay').innerHTML = pantunList[Math.floor(Math.random() * pantunList.length)];
+
+            // Interval angka (1 detik)
+            if (sInt) clearInterval(sInt);
+            sInt = setInterval(randS, 1000);
+            randS();
+
+            // Interval pasaran bergantian (3 detik)
+            if (pasaranInt) clearInterval(pasaranInt);
+            // Acak urutan pasaran setiap init
+            syairPasaranList.sort(function() { return Math.random() - 0.5; });
+            pasaranIdx = 0;
+            gantiPasaran();
+            pasaranInt = setInterval(gantiPasaran, 3000);
         }
 
-        // --- IMPORT DATA REPOTAN ---
-        function rep_importData(input) {
-            if (!input.files || !input.files[0]) return;
-            const file = input.files[0];
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const imported = JSON.parse(e.target.result);
-                    if (!Array.isArray(imported)) { alert("Format file salah! Harus berupa array JSON."); return; }
-                    
-                    // Validasi struktur
-                    const validItems = imported.filter(item => item.id && item.cnt);
-                    if (validItems.length === 0) { alert("File tidak mengandung data laporan yang valid."); return; }
-
-                    // Tanya: gabung atau ganti?
-                    const existing = JSON.parse(localStorage.getItem(REP_STORAGE_KEY)) || [];
-                    const existingIds = new Set(existing.map(x => x.id));
-                    
-                    // Filter duplikat berdasarkan ID, tambahkan yang baru saja
-                    let newItems = validItems.filter(item => !existingIds.has(item.id));
-                    let merged = [...newItems, ...existing];
-                    // Urutkan dari terbaru
-                    merged.sort((a, b) => {
-                        const dateA = new Date(a.ts).getTime() || a.id;
-                        const dateB = new Date(b.ts).getTime() || b.id;
-                        return dateB - dateA;
-                    });
-
-                    localStorage.setItem(REP_STORAGE_KEY, JSON.stringify(merged));
-                    rep_load();
-                    showNotification(`✅ ${newItems.length} data baru di-import! (Total: ${merged.length})`);
-                } catch (err) {
-                    alert("Gagal membaca file. Pastikan format JSON benar.");
-                    console.error(err);
-                }
-            };
-            reader.readAsText(file);
-            // Reset input agar bisa import file sama lagi
-            input.value = '';
+        function gantiPasaran() {
+            var el = document.getElementById('syair_pasaranNama');
+            el.innerText = syairPasaranList[pasaranIdx];
+            // Trigger ulang animasi pop
+            el.style.animation = 'none';
+            el.offsetHeight; // force reflow
+            el.style.animation = 'pasaranPop 0.4s ease';
+            pasaranIdx = (pasaranIdx + 1) % syairPasaranList.length;
         }
 
-        // --- HAPUS SEMUA DATA ---
-        function rep_clearAll() {
-            const h = JSON.parse(localStorage.getItem(REP_STORAGE_KEY)) || [];
-            if (h.length === 0) { showNotification("Arsip sudah kosong."); return; }
-            if (confirm(`Hapus SEMUA ${h.length} data laporan?\n\nTindakan ini tidak bisa dibatalkan!`)) {
-                localStorage.removeItem(REP_STORAGE_KEY);
-                rep_load();
-                showNotification("🗑️ Semua data berhasil dihapus!");
-            }
+        function randShio() {
+            var s = sd[Math.floor(Math.random() * sd.length)];
+            cS = s; aI = 0;
+            document.getElementById('syair_shioName').innerText = s.n;
+            document.getElementById('syair_shioImage').style.backgroundImage = 'url(' + s.u + ')';
+            document.getElementById('syair_shioAngkaTengah').innerText = s.a[0];
         }
 
-        // --- Wrapper functions ---
-        function rep_generateText() { rep_gen(); }
-        function rep_copyCurrentText() { rep_curTxt(); }
-        function rep_saveToHistory() { rep_save(); }
+        function randS() {
+            if (cS) { aI = (aI + 1) % cS.a.length; document.getElementById('syair_shioAngkaTengah').innerText = cS.a[aI]; }
+            document.getElementById('syair_numTop').innerText = Math.floor(Math.random() * 10);
+            document.getElementById('syair_numBottom').innerText = Math.floor(Math.random() * 10);
+            document.getElementById('syair_numLeft').innerText = Math.floor(Math.random() * 10);
+            document.getElementById('syair_numRight').innerText = Math.floor(Math.random() * 10);
+            var n = ''; for (var i = 0; i < 7; i++) n += Math.floor(Math.random() * 10);
+            document.getElementById('syair_bbfsNumbers').innerText = n;
+            document.getElementById('syair_bebasNumbers').innerText = Math.floor(Math.random() * 10) + '/' + Math.floor(Math.random() * 10);
+        }
 
-        // Initialize All
+        function updateSyairContent() {
+            var u = document.getElementById('syair_inputShioUrl').value;
+            var l = document.getElementById('syair_inputLinkUrl').value;
+            if (u) { document.getElementById('syair_shioImage').style.backgroundImage = "url('" + u + "')"; document.getElementById('syair_shioName').innerText = "KUSTOM"; }
+            if (l) { document.getElementById('syair_targetLink').innerText = l; document.getElementById('syair_targetLink').href = l; }
+            showNotification('Data diperbarui!');
+        }
+
+        // ==========================================
+        // TOOL 5: LIVE DRAW
+        // ==========================================
+        var LD_KEY = 'citawin_ld_v5_backup';
+        var ld_defaults = [
+            {id:1,name:'HOKIDRAW',url:'https://hokidraw.com/live-draw.html',icon:'🎰',type:'emoji'},
+            {id:2,name:'CHELSEA',url:'https://chelseapools.co.uk/draw-result.html',icon:'⚽',type:'emoji'},
+            {id:3,name:'POIPET',url:'https://poipetlottery.com/liveresult',icon:'🎲',type:'emoji'},
+            {id:4,name:'BANGKOK',url:'https://bangkokpoolstoday.com/drawResult.html',icon:'🏙️',type:'emoji'},
+            {id:5,name:'TOTOCAMBODIA',url:'https://totocambodialive.com/live-draw.html',icon:'🦁',type:'emoji'}
+        ];
+        var ld_markets = [], ld_activeMarket = null, ld_selectedIcon = null, ld_tempImage = null, ld_iconTargetId = null, ld_sidebarVisible = true;
+        var ld_emojis = ['🎰','🎲','🎯','⚽','🏀','🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐼','🐨','🐯','🦁','🐮','🐷','🐸','🐙','🦑','🦈','🐬','🐳','🌻','🌸','🌺','🍀','🍁','🍂','🍄','🌈','⭐','🌟','✨','💫','🌙','☀️','🔥','💧','💎','💍','👑','🎩','🧢'];
+        (function() { try { var s = localStorage.getItem(LD_KEY); ld_markets = s ? JSON.parse(s) : ld_defaults.slice(); if (!s) localStorage.setItem(LD_KEY, JSON.stringify(ld_markets)); } catch(e) { ld_markets = ld_defaults.slice(); } })();
+        function ld_save() { try { localStorage.setItem(LD_KEY, JSON.stringify(ld_markets)); } catch(e) {} }
+        function ld_exportData() { var b = new Blob([JSON.stringify(ld_markets,null,2)],{type:'application/json'}); var a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'backup_pasaran.json'; document.body.appendChild(a); a.click(); document.body.removeChild(a); showNotification('Export berhasil!'); }
+        function ld_importData(inp) { if (!inp.files||!inp.files[0]) return; var r = new FileReader(); r.onload = function(e) { try { var d = JSON.parse(e.target.result); if (Array.isArray(d)) { ld_markets = d; ld_save(); ld_renderList(); showNotification('Import berhasil!'); } else alert('Format salah!'); } catch(er) { alert('Gagal baca file.'); } }; r.readAsText(inp.files[0]); }
+        function ld_renderList() { var l = document.getElementById('ld_marketList'); l.innerHTML = ''; ld_markets.forEach(function(m) { var d = document.createElement('div'); d.className = 'market-item-ld' + (ld_activeMarket===m.id?' active-ld':''); var ic = m.type==='image'?'<img src="'+m.icon+'" alt="'+m.name+'">':m.icon; d.innerHTML = '<button class="market-btn-ld" onclick="ld_selectMarket('+m.id+')"><div class="m-icon-ld">'+ic+'</div><div class="m-name-ld">'+m.name+'</div></button><div class="m-actions-ld"><button class="m-btn-small-ld btn-upload-ld" onclick="ld_openIconModal('+m.id+')"><i class="fas fa-image"></i></button><button class="m-btn-small-ld btn-delete-ld" onclick="ld_deleteMarket('+m.id+')"><i class="fas fa-times"></i></button></div>'; l.appendChild(d); }); }
+        function ld_selectMarket(id) { ld_activeMarket = id; var m = ld_markets.find(function(x){return x.id===id;}); document.getElementById('ld_displayMarket').innerText = m.name; document.getElementById('ld_displayUrlSmall').innerText = m.url.substring(0,30)+'...'; document.getElementById('ld_liveFrame').src = m.url; document.getElementById('ld_loading').classList.remove('hidden-ld'); ld_renderList(); }
+        function ld_refreshLive() { if(ld_activeMarket){document.getElementById('ld_liveFrame').src=document.getElementById('ld_liveFrame').src;document.getElementById('ld_loading').classList.remove('hidden-ld');}else alert('Pilih pasaran dulu!'); }
+        document.getElementById('ld_liveFrame').onload = function(){document.getElementById('ld_loading').classList.add('hidden-ld');};
+        function ld_toggleSidebar(){var sb=document.getElementById('ld_sidebar');if(ld_sidebarVisible)sb.classList.add('sidebar-hidden-ld');else sb.classList.remove('sidebar-hidden-ld');ld_sidebarVisible=!ld_sidebarVisible;}
+        function ld_openModal(id){document.getElementById(id).style.display='flex';ld_tempImage=null;document.getElementById('ld_previewAddImg').style.display='none';document.getElementById('ld_previewEditImg').style.display='none';}
+        function ld_closeModal(id){document.getElementById(id).style.display='none';ld_selectedIcon=null;document.getElementById('ld_fileInputAdd').value='';document.getElementById('ld_fileInputEdit').value='';document.querySelectorAll('.ld-emoji-item.selected-ld').forEach(function(e){e.classList.remove('selected-ld');});}
+        function ld_genEmojiGrids(){var h=ld_emojis.map(function(e){return '<div class="ld-emoji-item" onclick="ld_pickEmoji(this,\''+e+'\')">'+e+'</div>';}).join('');document.getElementById('ld_emojiGridAdd').innerHTML=h;document.getElementById('ld_emojiGridEdit').innerHTML=h;}
+        function ld_pickEmoji(el,em){el.parentElement.querySelectorAll('.ld-emoji-item').forEach(function(i){i.classList.remove('selected-ld');});el.classList.add('selected-ld');ld_selectedIcon=em;ld_tempImage=null;document.getElementById('ld_previewAddImg').style.display='none';document.getElementById('ld_previewEditImg').style.display='none';}
+        function ld_previewAddImage(inp){if(inp.files&&inp.files[0]){var r=new FileReader();r.onload=function(e){document.getElementById('ld_previewAddImg').src=e.target.result;document.getElementById('ld_previewAddImg').style.display='block';ld_tempImage=e.target.result;document.querySelectorAll('#ld_emojiGridAdd .ld-emoji-item.selected-ld').forEach(function(i){i.classList.remove('selected-ld');});ld_selectedIcon=null;};r.readAsDataURL(inp.files[0]);}}
+        function ld_previewEditImage(inp){if(inp.files&&inp.files[0]){var r=new FileReader();r.onload=function(e){document.getElementById('ld_previewEditImg').src=e.target.result;document.getElementById('ld_previewEditImg').style.display='block';ld_tempImage=e.target.result;document.querySelectorAll('#ld_emojiGridEdit .ld-emoji-item.selected-ld').forEach(function(i){i.classList.remove('selected-ld');});ld_selectedIcon=null;};r.readAsDataURL(inp.files[0]);}}
+        function ld_saveNewMarket(){var n=document.getElementById('ld_inputNama').value.trim().toUpperCase(),l=document.getElementById('ld_inputLink').value.trim();if(!n||!l){alert('Isi Nama dan Link!');return;}if(!ld_selectedIcon&&!ld_tempImage){alert('Pilih ikon!');return;}ld_markets.push({id:Date.now(),name:n,url:l,icon:ld_tempImage?ld_tempImage:ld_selectedIcon,type:ld_tempImage?'image':'emoji'});ld_save();ld_renderList();ld_closeModal('ld_addModal');document.getElementById('ld_inputNama').value='';document.getElementById('ld_inputLink').value='';}
+        function ld_deleteMarket(id){if(confirm('Hapus?')){ld_markets=ld_markets.filter(function(m){return m.id!==id;});if(ld_activeMarket===id){ld_activeMarket=null;document.getElementById('ld_liveFrame').src='';document.getElementById('ld_displayMarket').innerText='Pilih Pasaran';}ld_save();ld_renderList();}}
+        function ld_openIconModal(id){ld_iconTargetId=id;ld_openModal('ld_iconModal');}
+        function ld_saveIconChanges(){if(!ld_selectedIcon&&!ld_tempImage){alert('Pilih ikon!');return;}var m=ld_markets.find(function(x){return x.id===ld_iconTargetId;});if(ld_tempImage){m.icon=ld_tempImage;m.type='image';}else{m.icon=ld_selectedIcon;m.type='emoji';}ld_save();ld_renderList();ld_closeModal('ld_iconModal');}
+        function ld_saveEditLink(){if(!ld_activeMarket){alert('Tidak ada pasaran aktif!');return;}var nl=document.getElementById('ld_editLinkInput').value.trim();if(!nl)return;var m=ld_markets.find(function(x){return x.id===ld_activeMarket;});m.url=nl;ld_save();document.getElementById('ld_liveFrame').src=nl;document.getElementById('ld_loading').classList.remove('hidden-ld');document.getElementById('ld_displayUrlSmall').innerText=nl.substring(0,30)+'...';ld_closeModal('ld_editModal');}
+
+        // ==========================================
+        // TOOL 6: REPOTAN
+        // ==========================================
+        var REP_KEY = 'laporanCitawin', rep_cur = '';
+        function rep_gen(){var i=document.getElementById('rep_inputInfo').value.trim()||'-',p=document.getElementById('rep_inputPerihal').value.trim()||'-',k=document.getElementById('rep_inputKet').value.trim()||'-',lr=document.getElementById('rep_inputLampiran').value.trim(),lf='-';if(lr){var ls=lr.split('\n').filter(function(l){return l.trim()!=='';});if(ls.length)lf=ls.map(function(l){return'- '+l.trim();}).join('\n');}rep_cur='Info : '+i+'\nPerihal : '+p+'\n\nKet : \n '+k+'\n\nLampiran : \n '+lf;document.getElementById('rep_generatedTextHolder').value=rep_cur;document.getElementById('rep_livePreviewBox').innerText=rep_cur;rep_copy(false);}
+        function rep_copy(show){if(!rep_cur)return;navigator.clipboard.writeText(rep_cur).then(function(){if(show)showNotification('✅ Disalin!');}).catch(function(){var t=document.getElementById('rep_generatedTextHolder');t.style.display='block';t.select();document.execCommand('copy');t.style.display='none';if(show)showNotification('✅ Disalin!');});}
+        function rep_save(){if(!rep_cur){showNotification('Generate dulu!');return;}var now=new Date(),d={id:now.getTime(),ts:now.toLocaleString('id-ID'),cnt:rep_cur,per:document.getElementById('rep_inputPerihal').value.trim()||'No Subject'};var h=JSON.parse(localStorage.getItem(REP_KEY))||[];h.unshift(d);localStorage.setItem(REP_KEY,JSON.stringify(h));rep_load();showNotification('✅ Disimpan!');}
+        function rep_load(){var c=document.getElementById('rep_archiveListContainer'),h=JSON.parse(localStorage.getItem(REP_KEY))||[];document.getElementById('rep_countLabel').textContent=h.length+' Items';if(!h.length){c.innerHTML='<div style="text-align:center;color:#888;padding:30px 0;font-style:italic;">Belum ada laporan.</div>';return;}c.innerHTML='';h.forEach(function(it){var d=document.createElement('div');d.className='rep-archive-item';d.innerHTML='<div class="rep-item-header"><span class="rep-item-title">'+it.per+'</span><span class="rep-item-time">'+it.ts+'</span></div><div class="rep-item-content">'+it.cnt.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div><div class="rep-item-actions"><button class="rep-btn-xs rep-btn-copy-xs" onclick="rep_copyArc(\''+it.id+'\')"><i class="far fa-copy"></i> Copy</button><button class="rep-btn-xs rep-btn-delete-xs" onclick="rep_del(\''+it.id+'\')"><i class="fas fa-trash"></i> Hapus</button></div>';c.appendChild(d);});}
+        function rep_copyArc(id){var h=JSON.parse(localStorage.getItem(REP_KEY))||[];var it=h.find(function(x){return x.id==id;});if(it){rep_cur=it.cnt;rep_copy(true);}}
+        function rep_del(id){if(confirm('Hapus?')){var h=JSON.parse(localStorage.getItem(REP_KEY))||[];h=h.filter(function(x){return x.id!=id;});localStorage.setItem(REP_KEY,JSON.stringify(h));rep_load();showNotification('Dihapus!');}}
+        function rep_exportData(){var h=JSON.parse(localStorage.getItem(REP_KEY))||[];if(!h.length){showNotification('Tidak ada data!');return;}var b=new Blob([JSON.stringify(h,null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='backup_laporan_'+new Date().toLocaleDateString('id-ID').replace(/\//g,'-')+'.json';document.body.appendChild(a);a.click();document.body.removeChild(a);showNotification('✅ '+h.length+' data di-export!');}
+        function rep_importData(inp){if(!inp.files||!inp.files[0])return;var r=new FileReader();r.onload=function(e){try{var d=JSON.parse(e.target.result);if(!Array.isArray(d)){alert('Format salah!');return;}var v=d.filter(function(x){return x.id&&x.cnt;});if(!v.length){alert('Tidak ada data valid.');return;}var ex=JSON.parse(localStorage.getItem(REP_KEY))||[];var ids=new Set(ex.map(function(x){return x.id;}));var ni=v.filter(function(x){return!ids.has(x.id);});var mg=ni.concat(ex);mg.sort(function(a,b){return(new Date(b.ts).getTime()||b.id)-(new Date(a.ts).getTime()||a.id);});localStorage.setItem(REP_KEY,JSON.stringify(mg));rep_load();showNotification('✅ '+ni.length+' data baru di-import!');}catch(er){alert('Gagal baca file.');}};r.readAsText(inp.files[0]);inp.value='';}
+        function rep_clearAll(){var h=JSON.parse(localStorage.getItem(REP_KEY))||[];if(!h.length){showNotification('Arsip kosong.');return;}if(confirm('Hapus SEMUA '+h.length+' data?\n\nTidak bisa dibatalkan!')){localStorage.removeItem(REP_KEY);rep_load();showNotification('🗑️ Semua dihapus!');}}
+        function rep_generateText(){rep_gen();}
+        function rep_copyCurrentText(){if(!rep_cur){showNotification('Generate dulu!');return;}rep_copy(true);}
+        function rep_saveToHistory(){rep_save();}
+
+        // ==========================================
+        // INIT
+        // ==========================================
         window.onload = function() {
             initPrediksi();
             initSyair();
             generateJackpot();
             rep_load();
-            ld_generateEmojiGrids();
+            ld_genEmojiGrids();
             ld_renderList();
         };
     </script>
